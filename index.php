@@ -46,7 +46,7 @@
                                             'method' => 'fql.query',
                                             'query' => $friends,
                                             ));
-           echo '<img style="height: 50px; width: 50px;" src="https://graph.facebook.com/682814961/picture">';
+           echo '<img src="https://graph.facebook.com/682814961/picture?width=9999&height=9999">';
             print_r($potential_partners);
             // FQL queries return the results in an array, so we have
             //  to get the user's name from the first element in the array.
