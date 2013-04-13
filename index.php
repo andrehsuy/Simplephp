@@ -66,10 +66,10 @@
             {
              //   $imageLink= "<img src=\"http://graph.facebook.com/".$potential_partners[%i]['uid']."/picture?type=square\" />";
                
-              //  $query="INSERT INTO Hash_Dating(11111, 'andre', 'male','facebook.com')";
-                $query="INSERT INTO Hash_Dating (P_ID, name, gender,image) VALUES (111,'Andre','male','facebook.com')";
-               
-               // $query="INSERT INTO Hash_Dating (P_ID, name, gender,image) VALUES ($potential_partners[%i]['uid'], '$potential_partner[%i]['name']', '$potential_partner[%i]['sex']','$imageLink')";
+               // $query="INSERT INTO Hash_Dating(11111, 'andre', 'male','facebook.com')";
+              //  $query="INSERT INTO Hash_Dating (P_ID, name, gender,image) VALUES (111,'Andre','male','facebook.com')";
+               $imageLink= 'hi';
+                $query="INSERT INTO Hash_Dating (P_ID, name, gender,image) VALUES ($potential_partners[%i]['uid'], '$potential_partner[%i]['name']', '$potential_partner[%i]['sex']','$imageLink')";
             
             if (!mysqli_query($db,$query))
             {
