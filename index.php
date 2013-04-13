@@ -5,8 +5,8 @@
         require_once('facebook-php-sdk-master/src/facebook.php');
           
         $config = array(
-                        'appId' => '568310513202986',
-                        'secret' => 'e266cf63ed2acfdf6e009ba030accc77'
+                        'appId' => '161479254012995',
+                        'secret' => '88962d7e6e8916648c372358c84068fe'
                         ); //adding in trustfowarding and sharedSession hide login part (good?)
      
     
