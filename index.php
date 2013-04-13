@@ -66,7 +66,7 @@
             {
                 $imageLink= "<img src=\"http://graph.facebook.com/".$potential_partners[%i]['uid']."/picture?type=square\" />";
                
-                $query="INSERT INTO Hash_Dating VALUES ($potential_partners[%i]['uid'], '$potential_partner[%i]['name']', '$potential_partner[%i]['sex'],$imageLink )'";
+                $query="INSERT INTO Hash_Dating VALUES ($potential_partners[%i]['uid'], '$potential_partner[%i]['name']', '$potential_partner[%i]['sex']','$imageLink')";
                 
                  mysql_query($query);
             }
