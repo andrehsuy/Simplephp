@@ -3,6 +3,6 @@
 
 </head>
 
-fuck you
+no fuck you
 
 </html>
