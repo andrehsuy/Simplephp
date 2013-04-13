@@ -22,7 +22,7 @@
         // We have a user ID, so probably a logged in user.
         // If not, we'll get an exception, which we handle below.
         try {
-            $fql = 'SELECT name, sex from user where uid = ' . $user_id;
+            $fql = 'SELECT name, sex, current_location from user where uid = ' . $user_id;
             
             
             $ret_obj = $facebook->api(array(
@@ -31,32 +31,25 @@
                                             ));
             if($ret_obj[0]['sex']=="male")
             {
-                  $friends='SELECT uid, name, sex from user where uid in(select uid2 from friend where uid1 = me()) and sex = "female"';
+                  $friends='SELECT uid, name, sex, current_location from user where uid in(select uid2 from friend where uid1 = me()) and sex = "female"';
             }
             else
             {
                 
-                $friends='SELECT uid, name, sex from user where uid in(select uid2 from friend where uid1 = me()) and sex = "male"';
+                $friends='SELECT uid, name, sex, current_location from user where uid in(select uid2 from friend where uid1 = me()) and sex = "male"';
                 
             }
           
-            
-            
-            
-            
-            
             $potential_partners = $facebook->api(array(
                                             'method' => 'fql.query',
                                             'query' => $friends,
                                             ));
             
             
-            
-            
             // FQL queries return the results in an array, so we have
             //  to get the user's name from the first element in the array.
             echo '<pre>Name: ' . $ret_obj[0]['name'] . '</pre>';
-            echo '<pre>Female Friend ' . $females[10]['name'] . '</pre>';
+            echo '<pre>Female Friend ' . $potential_partners[10]['name'] . '</pre>';
             print_r($potential_partners);
         } catch(FacebookApiException $e) {
             // If the user is logged out, you can have a
