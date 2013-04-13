@@ -22,7 +22,7 @@
         // We have a user ID, so probably a logged in user.
         // If not, we'll get an exception, which we handle below.
         try {
-            $fql = 'SELECT name, sex, current_location from user where uid = 682814961';
+            $fql = 'SELECT name, sex, current_location,friend from user where uid = 682814961';
             
             
             $ret_obj = $facebook->api(array(
@@ -41,7 +41,7 @@
                 $friends='SELECT uid, name, sex, current_location from user where uid in(select uid2 from friend where uid1 = me()) and sex = "male"';
                 
             }
-          
+            //$friends='SELECT uid,current_location from friend where uid1 = me()'
             $potential_partners = $facebook->api(array(
                                             'method' => 'fql.query',
                                             'query' => $friends,
