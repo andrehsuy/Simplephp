@@ -33,7 +33,7 @@
             $gender= "female";
             if($ret_obj[0]['sex']=="male")
             {
-                  $friends='SELECT uid, name, sex, current_location from user where uid in(select uid2 from friend where uid1 = me()) and sex =' .$gender;
+                  $friends='SELECT uid, name, sex, current_location from user where uid in(select uid2 from friend where uid1 = me()) and sex ='.$gender;
             }
             else
             {
