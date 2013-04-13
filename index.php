@@ -1,6 +1,4 @@
-<html>
-<head></head>
-<body>
+
 <?php
         // Remember to copy files from the SDK's src/ directory to a
         // directory in your application on the server, such as php-sdk/
@@ -17,7 +15,9 @@
         $facebook = new Facebook($config);
         $user_id = $facebook->getUser();
     ?>
-
+<html>
+<head></head>
+<body>
 <?php
     if($user_id) {
         
