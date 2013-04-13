@@ -41,10 +41,10 @@
             
    $friends='SELECT uid, name, sex from user where uid in(select uid2 from friend where uid1 = me()) and sex = ' . $interest;
             
-      //  $potential_partners = $facebook->api(array(
-       //                                 'method' => 'fql.query',
-       //                                    'query' => $friends,
-       //                                 ));
+        $potential_partners = $facebook->api(array(
+                                        'method' => 'fql.query',
+                                           'query' => $friends,
+                                        ));
             
             // FQL queries return the results in an array, so we have
             //  to get the user's name from the first element in the array.
