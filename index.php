@@ -64,9 +64,12 @@
             
             for($i=0;$i<80; i++)
             {
-                $imageLink= "<img src=\"http://graph.facebook.com/".$potential_partners[%i]['uid']."/picture?type=square\" />";
+              //  $imageLink= "<img src=\"http://graph.facebook.com/".$potential_partners[%i]['uid']."/picture?type=square\" />";
                
-                $query="INSERT INTO Hash_Dating VALUES ($potential_partners[%i]['uid'], '$potential_partner[%i]['name']', '$potential_partner[%i]['sex']','$imageLink')";
+                $query="INSERT INTO Hash_Dating VALUES (11111, 'andre', 'male','facebook.com')";
+                
+                // $query="INSERT INTO Hash_Dating VALUES ($potential_partners[%i]['uid'], '$potential_partner[%i]['name']', '$potential_partner[%i]['sex']','$imageLink')";
+
                 
                  mysql_query($query);
             }
