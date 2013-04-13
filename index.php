@@ -28,7 +28,7 @@
                                             'method' => 'fql.query',
                                             'query' => $fql,
                                             ));
-            if($ret_obj[0]['sex']= "male")
+            if($ret_obj[0]['sex']== "male")
             {
                 $interest= "female";
             }
@@ -36,9 +36,9 @@
             {
                 $interest= "male";
             }
-            $interest="female";
             
-            $friends='SELECT uid, name, sex from user where uid in(select uid2 from friend where uid1 = me()) and sex = "$interest"';
+            
+            $friends='SELECT uid, name, sex from user where uid in(select uid2 from friend where uid1 = me()) and sex =' . $interest;
             
             $potential_partners = $facebook->api(array(
                                             'method' => 'fql.query',
@@ -48,7 +48,7 @@
             // FQL queries return the results in an array, so we have
             //  to get the user's name from the first element in the array.
             echo '<pre>Name: ' . $ret_obj[0]['name'] . '</pre>';
-            echo '<pre>$interest Friend ' . $potential_partners[10]['name'] . '</pre>';
+            echo '<pre>' $interest . 'Friend ' . $potential_partners[10]['name'] . '</pre>';
             print_r($potential_partners);
         } catch(FacebookApiException $e) {
             // If the user is logged out, you can have a
