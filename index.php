@@ -22,27 +22,27 @@
         // We have a user ID, so probably a logged in user.
         // If not, we'll get an exception, which we handle below.
         try {
+            echo $user_id;
+            
+       //     $fql = 'SELECT uid, name, sex, current_location from user where uid = ';
             
             
-            $fql = 'SELECT uid, name, sex, current_location from user where uid = $user_id';
-            
-            
-            $ret_obj = $facebook->api(array(
-                                            'method' => 'fql.query',
-                                            'query' => $fql,
-                                            ));
-            print_r($ret_obj);
+       //     $ret_obj = $facebook->api(array(
+        //                                    'method' => 'fql.query',
+        //                                    'query' => $fql,
+         //                                   ));
+         //   print_r($ret_obj);
            
             
-            $gender="'female'";
-            if($ret_obj[0]['sex']=="male")
-            {
-                $friends='SELECT uid, name, sex, current_location from user where uid in(select uid2 from friend where uid1 = me()) and sex = '.$gender;
-            }
-            else
-            {
+         //   $gender="'female'";
+         //   if($ret_obj[0]['sex']=="male")
+         //   {
+         //       $friends='SELECT uid, name, sex, current_location from user where uid in(select uid2 from friend where uid1 = me()) and sex = '.$gender;
+         //   }
+         //   else
+        //{
                 
-                $friends='SELECT uid, name, sex, current_location from user where uid in(select uid2 from friend where uid1 = me()) and sex = "male"';
+        //        $friends='SELECT uid, name, sex, current_location from user where uid in(select uid2 from friend where uid1 = me()) and sex = "male"';
                 
             }
             
