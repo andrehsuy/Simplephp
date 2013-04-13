@@ -43,14 +43,34 @@
             $potential_partners = $facebook->api(array(
                                             'method' => 'fql.query',
                                             'query' => $friends,
-                                            ));
+            ));
+            
+            global $db;
+            $db=  mysql_connect('localhost','root','');
+            mysql_select_db('newdatabase');
+            
+            if(mysqli_connect_errno())
+            {
+                echo 'Could not connect to database!';
+                exit;
+            }
+            
+            
+            for($i=0;$i<80; i++)
+            {
+                $imageLink= "<img src=\"http://graph.facebook.com/".$potential_partners[%i]['uid']."/picture?type=square\" />"
+               
+                $query="INSERT INTO Dating_Participants VALUES ($potential_partners[%i]['uid'], $potential_partner[%i]['name'], $potential_partner[%i]['sex'], 'something', 'something', 'something',$imageLink )";
+                
+                mysql_query("$query");
+            }
             
             
             
 // FQL queries return the results in an array, so we have
             //  to get the user's name from the first element in the array.
-            echo '<pre>Name: ' . $ret_obj[0]['name'] . '</pre>';
-            echo '<pre>Female Friend ' . $females[10]['name'] . '</pre>';
+           // echo '<pre>Name: ' . $ret_obj[0]['name'] . '</pre>';
+           // echo '<pre>Female Friend ' . $females[10]['name'] . '</pre>';
             print_r($potential_partners);
         } catch(FacebookApiException $e) {
             // If the user is logged out, you can have a
