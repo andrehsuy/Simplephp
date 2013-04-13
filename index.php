@@ -1,4 +1,6 @@
-
+<html>
+<head></head>
+<body>
 <?php
         // Remember to copy files from the SDK's src/ directory to a
         // directory in your application on the server, such as php-sdk/
@@ -6,16 +8,15 @@
           
         $config = array(
                         'appId' => '568310513202986',
-                        'secret' => '47001347f1e9d46811687a6841bef2b0',
+                        'secret' => 'e266cf63ed2acfdf6e009ba030accc77',
+                        'sharedSession'=> true;
+                        'trustFowarded'=>true;
                         );
      
-        
+    
         $facebook = new Facebook($config);
         $user_id = $facebook->getUser();
     ?>
-<html>
-<head></head>
-<body>
 
 <?php
     if($user_id) {
@@ -45,6 +46,8 @@
                                             'method' => 'fql.query',
                                             'query' => $friends,
             ));
+            
+               print_r($potential_partners);
             /*
             global $db;
             $db=  mysql_connect('localhost','root','');
@@ -72,7 +75,7 @@
             //  to get the user's name from the first element in the array.
            // echo '<pre>Name: ' . $ret_obj[0]['name'] . '</pre>';
            // echo '<pre>Female Friend ' . $females[10]['name'] . '</pre>';
-            print_r($potential_partners);
+         
         } catch(FacebookApiException $e) {
             // If the user is logged out, you can have a
             // user ID even though the access token is invalid.
