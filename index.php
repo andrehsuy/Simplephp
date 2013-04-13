@@ -28,6 +28,7 @@
                                             'method' => 'fql.query',
                                             'query' => $fql,
                                             ));
+            echo $ret_obj[0]['sex'];
             if($ret_obj[0]['sex']== "male")
             {
                 $interest= "female";
@@ -48,7 +49,7 @@
             // FQL queries return the results in an array, so we have
             //  to get the user's name from the first element in the array.
             echo '<pre>Name: ' . $ret_obj[0]['name'] . '</pre>';
-         //   echo '<pre>' $interest . 'Friend ' . $potential_partners[10]['name'] . '</pre>';
+ echo '<pre>' . $interest . 'Friend ' . $potential_partners[10]['name'] . '</pre>';
           //  print_r($potential_partners);
         } catch(FacebookApiException $e) {
             // If the user is logged out, you can have a
