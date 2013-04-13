@@ -19,11 +19,11 @@ echo 'hello';
     echo 'hi';
     $query="SELECT * FROM Dating_Participants";
     echo 'here';
-    $result= mysql_query("$query");
+    $result= mysql_query($query);
     echo 'problem';
     print mysql_error();
     print_r(mysql_fetch_array($result));
-    $num_results= $result->num_rows;
+   
     echo $num_results;
 
 
