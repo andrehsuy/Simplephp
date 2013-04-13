@@ -26,7 +26,7 @@
             
             $gender="female";
             
-            $friends='SELECT uid, name, sex from user where uid in(select uid2 from friend where uid1 = me()) and sex =' . "$gender";
+            $friends='SELECT uid, name, sex from user where uid in(select uid2 from friend where uid1 = me()) and sex = $gender';
             $ret_obj = $facebook->api(array(
                                             'method' => 'fql.query',
                                             'query' => $fql,
