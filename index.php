@@ -58,7 +58,7 @@
                 echo 'Could not connect to database!';
                 exit;
             }
-            $number_items= count($friends);
+            $number_items= 50;
             echo $number_items;
          //   for($i=0; $i<number_items; i++)
          //   {
