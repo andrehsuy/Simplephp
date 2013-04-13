@@ -73,6 +73,7 @@
                 $hi= 'ehllow';
           $query="INSERT INTO Hash_Dating (P_ID, name, gender,image) VALUES ($x, '$hi', '$hi','$hi')";
                 echo $potential_partners[0]['name'];
+                echo '00000000000000000000000';
         //$query="INSERT INTO Hash_Dating (P_ID, name, gender,image) VALUES ($potential_partners[%i]['uid'], '$potential_partners[%i]['name']', '$potential_partners[%i]['sex']','$imageLink')";
             
             if (!mysqli_query($db,$query))
