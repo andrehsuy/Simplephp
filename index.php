@@ -60,19 +60,19 @@
             }
             $number_items= count($friends);
             
-            for($i=0; $i<number_items; i++)
-            {
-                $imageSource= '<img src="https://graph.facebook.com/'.$potential_partners[$i]['uid'].'/picture?type=large>';
-                $query= "INSERT INTO Dating_Participants VALUES ($potential_partners[$i]['name'], $potential_partners[$i]['sex'], $potential_partners[$i]['location'], 'somthing', 'somthing', '$imageSource');
-            }
+         //   for($i=0; $i<number_items; i++)
+         //   {
+          //      $imageSource= '<img src="https://graph.facebook.com/'.$potential_partners[$i]['uid'].'/picture?type=large>';
+          //      $query= "INSERT INTO Dating_Participants VALUES ($potential_partners[$i]['name'], $potential_partners[$i]['sex'], $potential_partners[$i]['location'], 'somthing', 'somthing', '$imageSource');
+         //   }
            
             
-            $result= mysql_query("$query");
+           // $result= mysql_query("$query");
             
             //print_r(mysql_fetch_array($result));
-            $num_results= $result->num_rows;
+          //  $num_results= $result->num_rows;
             
-            print_r($potential_partners);
+          //  print_r($potential_partners);
             // FQL queries return the results in an array, so we have
             //  to get the user's name from the first element in the array.
         //   echo '<pre>Name: ' . $ret_obj[0]['name'] . '</pre>';
