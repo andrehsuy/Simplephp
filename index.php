@@ -45,9 +45,6 @@
                                             'query' => $friends,
             ));
             
-            /*
-            print_r($potential_partners);
-           
             global $db;
             $db=  mysql_connect('localhost','root','');
             mysql_select_db('newdatabase');
@@ -57,8 +54,6 @@
                 echo 'Could not connect to database!';
                 exit;
             }
-            
-            */
             
             /*
             for($i=0;$i<80; i++)
@@ -75,8 +70,8 @@
 // FQL queries return the results in an array, so we have
             //  to get the user's name from the first element in the array.
            // echo '<pre>Name: ' . $ret_obj[0]['name'] . '</pre>';
-            echo '<pre>Female Friend ' . $females[10]['name'] . '</pre>';
-           
+           // echo '<pre>Female Friend ' . $females[10]['name'] . '</pre>';
+           print_r($potential_partners);
         } catch(FacebookApiException $e) {
             // If the user is logged out, you can have a
             // user ID even though the access token is invalid.
