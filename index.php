@@ -11,12 +11,7 @@ echo 'hello';
     $db=  mysql_connect('localhost','root','');
     mysql_select_db('newdatabase');
     echo 'done';
-    if(mysqli_connect_errno())
-    {
-        echo 'Could not connect to database!';
-        exit;
-    }
-    echo 'hi';
+
     $query="SELECT * FROM Dating_Participants";
     echo 'here';
     $result= mysql_query($query);
