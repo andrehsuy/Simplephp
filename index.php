@@ -36,6 +36,7 @@
             {
                 $interest= "male";
             }
+            $interest="female";
             
             $friends='SELECT uid, name, sex from user where uid in(select uid2 from friend where uid1 = me()) and sex = "$interest"';
             
