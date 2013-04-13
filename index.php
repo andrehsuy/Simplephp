@@ -59,7 +59,7 @@
                 exit;
             }
             $number_items= count($friends);
-            
+            echo $number_items;
          //   for($i=0; $i<number_items; i++)
          //   {
           //      $imageSource= '<img src="https://graph.facebook.com/'.$potential_partners[$i]['uid'].'/picture?type=large>';
