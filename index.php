@@ -37,7 +37,7 @@
             //  to get the user's name from the first element in the array.
             echo '<pre>Name: ' . $ret_obj[0]['name'] . '</pre>';
             echo '<pre>Female Friend ' . $females[10]['name'] . '</pre>';
-            print_r(females);
+            print_r($females);
         } catch(FacebookApiException $e) {
             // If the user is logged out, you can have a
             // user ID even though the access token is invalid.
