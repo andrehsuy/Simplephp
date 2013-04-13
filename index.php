@@ -49,7 +49,7 @@
             ));
             
                print_r($potential_partners);
-            
+            /*
             global $db;
             $db=  mysql_connect('mysql.tedx.msjhs.net','tedxmsjhs','ws8sn#N8957HB!ok');
             mysql_select_db('tedx_msjhs');
@@ -70,7 +70,7 @@
                 
                  mysql_query("$query");
             }
-            
+            */
             
             
 // FQL queries return the results in an array, so we have
