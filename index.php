@@ -46,7 +46,7 @@
             ));
             
             
-            print_r($potential_partners);
+            echo 'hello';
            
             global $db;
             $db=  mysql_connect('localhost','root','');
@@ -63,6 +63,7 @@
             print mysql_error();
             print_r(mysql_fetch_array($result));
             
+            echo 'done';
             /*
             for($i=0;$i<80; i++)
             {
