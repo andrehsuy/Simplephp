@@ -22,77 +22,47 @@
         // We have a user ID, so probably a logged in user.
         // If not, we'll get an exception, which we handle below.
         try {
-            echo $user_id;
-            
-       //     $fql = 'SELECT uid, name, sex, current_location from user where uid = ';
+            $fql = 'SELECT name, sex from user where uid = ' . $user_id;
             
             
-       //     $ret_obj = $facebook->api(array(
-        //                                    'method' => 'fql.query',
-        //                                    'query' => $fql,
-         //                                   ));
-         //   print_r($ret_obj);
-           
-            
-         //   $gender="'female'";
-         //   if($ret_obj[0]['sex']=="male")
-         //   {
-         //       $friends='SELECT uid, name, sex, current_location from user where uid in(select uid2 from friend where uid1 = me()) and sex = '.$gender;
-         //   }
-         //   else
-        //{
+            $ret_obj = $facebook->api(array(
+                                            'method' => 'fql.query',
+                                            'query' => $fql,
+                                            ));
+            if($ret_obj[0]['sex']=="male")
+            {
+                  $friends='SELECT uid, name, sex from user where uid in(select uid2 from friend where uid1 = me()) and sex = "female"';
+            }
+            else
+            {
                 
-        //        $friends='SELECT uid, name, sex, current_location from user where uid in(select uid2 from friend where uid1 = me()) and sex = "male"';
+                $friends='SELECT uid, name, sex from user where uid in(select uid2 from friend where uid1 = me()) and sex = "male"';
                 
             }
+          
+            $potential_partners = $facebook->api(array(
+                                            'method' => 'fql.query',
+                                            'query' => $friends,
+                                            ));
             
-          //  $potential_partners = $facebook->api(array(
-          //                                  'method' => 'fql.query',
-          //                                  'query' => $friends,
-          //                                  ));
             
-           // global $db;
-           // $db=  mysql_connect('localhost','root','');
-           // mysql_select_db('newdatabase');
             
-           // if(mysqli_connect_errno())
-           // {
-           //     echo 'Could not connect to database!';
-            //    exit;
-           // }
-           
-         //   for($i=0; $i<number_items; i++)
-         //   {
-          //      $imageSource= '<img src="https://graph.facebook.com/'.$potential_partners[$i]['uid'].'/picture?type=large>';
-          //      $query= "INSERT INTO Dating_Participants VALUES ($potential_partners[$i]['name'], $potential_partners[$i]['sex'], $potential_partners[$i]['location'], 'somthing', 'somthing', '$imageSource');
-         //   }
-           
-            
-           // $result= mysql_query("$query");
-            
-            //print_r(mysql_fetch_array($result));
-          //  $num_results= $result->num_rows;
-            
-          //  print_r($potential_partners);
-            // FQL queries return the results in an array, so we have
+// FQL queries return the results in an array, so we have
             //  to get the user's name from the first element in the array.
-        //   echo '<pre>Name: ' . $ret_obj[0]['name'] . '</pre>';
-      //      echo '<pre>Female Friend ' . $potential_partners[10]['name'] . $potential_partners[10]['current_location'] . '</pre>';
-        //    print_r($potential_partners);
-        }
-        catch(FacebookApiException $e) {
+            echo '<pre>Name: ' . $ret_obj[0]['name'] . '</pre>';
+            echo '<pre>Female Friend ' . $females[10]['name'] . '</pre>';
+            print_r($potential_partners);
+        } catch(FacebookApiException $e) {
             // If the user is logged out, you can have a
             // user ID even though the access token is invalid.
             // In this case, we'll get an exception, so we'll
             // just ask the user to login again here.
-            print_r($e);
             $login_url = $facebook->getLoginUrl();
-         //   echo 'Please <a href="' . $login_url . '">login.</a>';
+            echo 'Please <a href="' . $login_url . '">login.</a>';
             error_log($e->getType());
             error_log($e->getMessage());
         }   
-    }
-    else {
+    } else {
         
         // No user, so print a link for the user to login
         $login_url = $facebook->getLoginUrl();
@@ -100,7 +70,7 @@
         
     }
     
-?>
+    ?>
 
 </body>
 </html>
