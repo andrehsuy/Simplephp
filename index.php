@@ -22,6 +22,10 @@
         // We have a user ID, so probably a logged in user.
         // If not, we'll get an exception, which we handle below.
         try {
+            
+            $number_items= 50;
+            echo $number_items;
+            
             $fql = 'SELECT uid, name, sex, current_location from user where uid = $user_id';
             
             
@@ -46,9 +50,6 @@
                                             'method' => 'fql.query',
                                             'query' => $friends,
                                             ));
-            
-            $number_items= 50;
-            echo $number_items;
             
             global $db;
             $db=  mysql_connect('localhost','root','');
