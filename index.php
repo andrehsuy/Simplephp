@@ -47,7 +47,7 @@
                                             'query' => $friends,
                                             ));
             
-            print_r($potential_partners)
+            print_r($potential_partners);
             // FQL queries return the results in an array, so we have
             //  to get the user's name from the first element in the array.
            echo '<pre>Name: ' . $ret_obj[0]['name'] . '</pre>';
