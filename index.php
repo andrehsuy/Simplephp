@@ -7,7 +7,7 @@
         $config = array(
                         'appId' => '568310513202986',
                         'secret' => 'e266cf63ed2acfdf6e009ba030accc77'
-                        );
+                        ); //adding in trustfowarding and sharedSession hide login part (good?)
      
     
         $facebook = new Facebook($config);
@@ -22,7 +22,7 @@
         // We have a user ID, so probably a logged in user.
         // If not, we'll get an exception, which we handle below.
         try {
-            $fql = 'SELECT name, sex from user where uid = ' . $user_id;
+            $fql = 'SELECT name, sex FROM user WHERE uid = ' . $user_id;
             
             
             $ret_obj = $facebook->api(array(
@@ -31,12 +31,12 @@
                                             ));
             if($ret_obj[0]['sex']=="male")
             {
-                $friends='SELECT uid, name, sex from user where uid in(select uid2 from friend where uid1 = me()) and sex = "female"';
+                $friends='SELECT uid, name, sex FROM user WHERE uid IN(SELECT uid2 FROM friend WHERE uid1 = me()) and sex = "female"';
             }
             else
             {
                 
-                $friends='SELECT uid, name, sex from user where uid in(select uid2 from friend where uid1 = me()) and sex = "male"';
+                $friends='SELECT uid, name, sex FROM user WHERE uid IN(SELECT uid2 FROM friend WHERE uid1 = me()) and sex = "male"';
                 
             }
           
