@@ -44,7 +44,7 @@
                                             'method' => 'fql.query',
                                             'query' => $friends,
             ));
-            
+            /*
             global $db;
             $db=  mysql_connect('localhost','root','');
             mysql_select_db('newdatabase');
@@ -55,14 +55,14 @@
                 exit;
             }
             
-            /*
+            
             for($i=0;$i<80; i++)
             {
                 $imageLink= "<img src=\"http://graph.facebook.com/".$potential_partners[%i]['uid']."/picture?type=square\" />"
                
                 $query="INSERT INTO Dating_Participants VALUES ($potential_partners[%i]['uid'], $potential_partner[%i]['name'], $potential_partner[%i]['sex'], 'something', 'something', 'something',$imageLink )";
                 
-                mysql_query("$query");
+                 mysql_query("$query");
             }
             */
             
@@ -71,7 +71,7 @@
             //  to get the user's name from the first element in the array.
            // echo '<pre>Name: ' . $ret_obj[0]['name'] . '</pre>';
            // echo '<pre>Female Friend ' . $females[10]['name'] . '</pre>';
-           print_r($potential_partners);
+            print_r($potential_partners);
         } catch(FacebookApiException $e) {
             // If the user is logged out, you can have a
             // user ID even though the access token is invalid.
