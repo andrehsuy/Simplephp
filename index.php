@@ -23,12 +23,23 @@
         // If not, we'll get an exception, which we handle below.
         try {
             $fql = 'SELECT name from user where uid = ' . $user_id;
-            $friends='SELECT uid, name, sex from user where uid in(select uid2 from friend where uid1 = me()) and sex = "female"';
+           
             $ret_obj = $facebook->api(array(
                                             'method' => 'fql.query',
                                             'query' => $fql,
                                             ));
-            $females = $facebook->api(array(
+            if($ret_obj[0]['sex']= "male")
+            {
+                $interest= "female";
+            }
+            else
+            {
+                $interest= "male";
+            }
+            
+            $friends='SELECT uid, name, sex from user where uid in(select uid2 from friend where uid1 = me()) and sex = "$interest"';
+            
+            $potential_partners = $facebook->api(array(
                                             'method' => 'fql.query',
                                             'query' => $friends,
                                             ));
@@ -36,8 +47,8 @@
             // FQL queries return the results in an array, so we have
             //  to get the user's name from the first element in the array.
             echo '<pre>Name: ' . $ret_obj[0]['name'] . '</pre>';
-            echo '<pre>Female Friend ' . $females[10]['name'] . '</pre>';
-            print_r($females);
+            echo '<pre>$interest Friend ' . $potential_partners[10]['name'] . '</pre>';
+            print_r($potential_partners);
         } catch(FacebookApiException $e) {
             // If the user is logged out, you can have a
             // user ID even though the access token is invalid.
