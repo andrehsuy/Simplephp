@@ -23,8 +23,6 @@
         // If not, we'll get an exception, which we handle below.
         try {
             
-            $number_items= 50;
-            echo $number_items;
             
             $fql = 'SELECT uid, name, sex, current_location from user where uid = $user_id';
             
@@ -33,7 +31,9 @@
                                             'method' => 'fql.query',
                                             'query' => $fql,
                                             ));
-          //  print_r($ret_obj);
+            print_r($ret_obj);
+           
+            
             $gender="'female'";
             if($ret_obj[0]['sex']=="male")
             {
@@ -46,20 +46,20 @@
                 
             }
             
-            $potential_partners = $facebook->api(array(
-                                            'method' => 'fql.query',
-                                            'query' => $friends,
-                                            ));
+          //  $potential_partners = $facebook->api(array(
+          //                                  'method' => 'fql.query',
+          //                                  'query' => $friends,
+          //                                  ));
             
-            global $db;
-            $db=  mysql_connect('localhost','root','');
-            mysql_select_db('newdatabase');
+           // global $db;
+           // $db=  mysql_connect('localhost','root','');
+           // mysql_select_db('newdatabase');
             
-            if(mysqli_connect_errno())
-            {
-                echo 'Could not connect to database!';
-                exit;
-            }
+           // if(mysqli_connect_errno())
+           // {
+           //     echo 'Could not connect to database!';
+            //    exit;
+           // }
            
          //   for($i=0; $i<number_items; i++)
          //   {
