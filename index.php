@@ -58,8 +58,8 @@
                 exit;
             }
             
-            $query="SELECT * FROM Dating_Participants";
-            $result= mysql_query("$query");
+            
+            $result= mysql_query('SELECT * FROM Dating_Participants');
             print mysql_error();
             print_r(mysql_fetch_array($result));
             
