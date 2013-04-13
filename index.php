@@ -29,7 +29,7 @@
                                             'method' => 'fql.query',
                                             'query' => $fql,
                                             ));
-            if(ret_obj[0]['sex']=="male")
+            if($ret_obj[0]['sex']=="male")
             {
                   $friends='SELECT uid, name, sex from user where uid in(select uid2 from friend where uid1 = me()) and sex = "female"';
             }
