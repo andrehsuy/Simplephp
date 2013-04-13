@@ -49,7 +49,7 @@
             ));
             
                print_r($potential_partners);
-            /*
+            
             global $db;
             $db=  mysql_connect('mysql.tedx.msjhs.net','tedxmsjhs','ws8sn#N8957HB!ok');
             mysql_select_db('tedx_msjhs');
@@ -66,11 +66,10 @@
             {
                 $imageLink= "<img src=\"http://graph.facebook.com/".$potential_partners[%i]['uid']."/picture?type=square\" />"
                
-                $query="INSERT INTO Dating_Participants VALUES ($potential_partners[%i]['uid'], $potential_partner[%i]['name'], $potential_partner[%i]['sex'],$imageLink )";
+                $query="INSERT INTO Hash_Dating VALUES ($potential_partners[%i]['uid'], $potential_partner[%i]['name'], $potential_partner[%i]['sex'],$imageLink )";
                 
                  mysql_query("$query");
             }
-            */
             
             
 // FQL queries return the results in an array, so we have
