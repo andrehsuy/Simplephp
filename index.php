@@ -3,11 +3,12 @@
         // Remember to copy files from the SDK's src/ directory to a
         // directory in your application on the server, such as php-sdk/
         require_once('facebook-php-sdk-master/src/facebook.php');
-        
+          
         $config = array(
                         'appId' => '568310513202986',
                         'secret' => '47001347f1e9d46811687a6841bef2b0',
                         );
+     
         
         $facebook = new Facebook($config);
         $user_id = $facebook->getUser();
@@ -31,7 +32,7 @@
                                             ));
             if($ret_obj[0]['sex']=="male")
             {
-                  $friends='SELECT uid, name, sex from user where uid in(select uid2 from friend where uid1 = me()) and sex = "female"';
+                $friends='SELECT uid, name, sex from user where uid in(select uid2 from friend where uid1 = me()) and sex = "female"';
             }
             else
             {
