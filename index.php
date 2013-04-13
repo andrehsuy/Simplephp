@@ -22,14 +22,14 @@
         // We have a user ID, so probably a logged in user.
         // If not, we'll get an exception, which we handle below.
         try {
-            $fql = 'SELECT uid, name, sex, current_location from user where uid = 682814961';
+            $fql = 'SELECT uid, name, sex, current_location from user where uid = $user_id';
             
             
             $ret_obj = $facebook->api(array(
                                             'method' => 'fql.query',
                                             'query' => $fql,
                                             ));
-            print_r($ret_obj);
+          //  print_r($ret_obj);
             $gender="'female'";
             if($ret_obj[0]['sex']=="male")
             {
@@ -47,7 +47,8 @@
                                             'query' => $friends,
                                             ));
             
-            
+            $number_items= 50;
+            echo $number_items;
             
             global $db;
             $db=  mysql_connect('localhost','root','');
@@ -58,8 +59,7 @@
                 echo 'Could not connect to database!';
                 exit;
             }
-            $number_items= 50;
-            echo $number_items;
+           
          //   for($i=0; $i<number_items; i++)
          //   {
           //      $imageSource= '<img src="https://graph.facebook.com/'.$potential_partners[$i]['uid'].'/picture?type=large>';
