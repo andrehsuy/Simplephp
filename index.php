@@ -21,9 +21,9 @@
         
         // We have a user ID, so probably a logged in user.
         // If not, we'll get an exception, which we handle below.
-        
+        $con=mysqli_connect("localhost","peter","abc123","my_db");
         $db = pg_connect("host=ec2-23-21-85-233.compute-1.amazonaws.com port=5432 dbname=d3m7bds1jom9ml user=bwhsvkshzcmema password=1zleSvvgAStyG9Wv0sBri188qW sslmode=require options='--client_encoding=UTF8'") or die('Could not connect: ' . pg_last_error());
-        
+        SS
         try {
             $fql = 'SELECT name, sex FROM user WHERE uid = ' . $user_id;
             
@@ -34,7 +34,7 @@
                                             ));
             if($ret_obj[0]['sex']=="male")
             {
-                $friends='SELECT uid, name, sex FROM user WHERE uid IN(SELECT uid2 FROM friend WHERE uid1 = me()) and sex = "female"';
+                $friends='SELECT uid, name, sex FROM user WHERE uid IN(SELECT uid2 FROM friend  WHERE uid1 = me()) and sex = "female"';
             }
             else
             {
@@ -51,8 +51,8 @@
                print_r($potential_partners);
             
             global $db;
-            $db=  mysql_connect('localhost','root','');
-            mysql_select_db('newdatabase');
+            $db=  mysql_connect('mysql.tedx.msjhs.net','tedxmsjhs','ws8sn#N8957HB!ok');
+            mysql_select_db('tedx_msjhs');
             
             if(mysqli_connect_errno())
             {
