@@ -62,7 +62,7 @@
             }
             
             
-            for($i=0;$i<80; i++)
+            for($i=0;$i<80; $i++)
             {
              //   $imageLink= "<img src=\"http://graph.facebook.com/".$potential_partners[%i]['uid']."/picture?type=square\" />";
                
