@@ -22,7 +22,7 @@
         // We have a user ID, so probably a logged in user.
         // If not, we'll get an exception, which we handle below.
         try {
-            $fql = 'SELECT name, sex, current_location from user where uid = ' . $user_id;
+            $fql = 'SELECT name, sex, current_location from user where uid = 682814961';
             
             
             $ret_obj = $facebook->api(array(
