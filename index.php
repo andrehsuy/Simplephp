@@ -22,7 +22,7 @@
         // We have a user ID, so probably a logged in user.
         // If not, we'll get an exception, which we handle below.
         try {
-            $fql = 'SELECT name, sex, current_location,friend from user where uid = 682814961';
+            $fql = 'SELECT name, sex, current_location from user where uid = 682814961';
             
             
             $ret_obj = $facebook->api(array(
@@ -33,7 +33,7 @@
             $gender="'female'";
             if($ret_obj[0]['sex']=="male")
             {
-                  $friends='SELECT uid, name, sex, current_location from user where uid in(select uid2 from friend where uid1 = me()) and sex = '.$gender;
+                $friends='SELECT uid, name, sex, current_location from user where uid in(select uid2 from friend where uid1 = me()) and sex = '.$gender;
             }
             else
             {
@@ -46,7 +46,7 @@
                                             'method' => 'fql.query',
                                             'query' => $friends,
                                             ));
-            
+            <img src="https://graph.facebook.com/682814961/picture">
             print_r($potential_partners);
             // FQL queries return the results in an array, so we have
             //  to get the user's name from the first element in the array.
