@@ -6,9 +6,7 @@
           
         $config = array(
                         'appId' => '568310513202986',
-                        'secret' => 'e266cf63ed2acfdf6e009ba030accc77',
-                        'sharedSession'=> true;
-                        'trustFowarded'=>true;
+                        'secret' => 'e266cf63ed2acfdf6e009ba030accc77'
                         );
      
     
