@@ -56,7 +56,7 @@
                 die('Could not connect: ' . mysql_error());
             }
             
-            $db_selected = mysql_select_db('tedx_msjhs', $db);
+            $db_selected = mysql_select_db('newDatabase', $db);
             if (!$db_selected) {
                 die ('Can\'t use foo : ' . mysql_error());
             }
