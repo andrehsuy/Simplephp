@@ -68,6 +68,11 @@
             $query="INSERT INTO Hash_Dating(11111, 'andre', 'male','facebook.com')";
             //$query="'INSERT INTO Hash_Dating (P_ID, Name, gender,image) VALUES ($potential_partners[$i]['uid'], '$potential_partners[$i]['name']', '$potential_partners[$i]['sex']','$imageLink')'";
             mysql_query($query);
+                if (!$result) {
+                    $message  = 'Invalid query: ' . mysql_error() . "\n";
+                    $message .= 'Whole query: ' . $query;
+                    die($message);
+                }
             echo "loop".$i;
         
             }
