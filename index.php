@@ -55,12 +55,7 @@
             mysql_select_db('tedx_msjhs');
              echo "checkpoint 5";
             
-            if(mysqli_connect_errno())
-            {
-                echo "Could not connect to database!";
-                exit;
-            }
-            echo "checkpoint 6";
+           
         //    mysql_close($db);
             
              
