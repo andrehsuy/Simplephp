@@ -27,7 +27,7 @@
         try {
             $fql = 'SELECT name, sex FROM user WHERE uid = ' . $user_id;
             
-             echo "<h5>I love using PHP!</h4>";
+             echo "checkpoint 1";
             $ret_obj = $facebook->api(array(
                                             'method' => 'fql.query',
                                             'query' => $fql,
@@ -48,26 +48,17 @@
                                             'query' => $friends,
             ));
             
-             echo "<h5>I love using PHP!</h6>";
+             echo "checkpoint 2";
               // print_r($potential_partners);
             
-            global $db;
-            $db=  mysql_connect('mysql.tedx.msjhs.net','tedxmsjhs','ws8sn#N8957HB!ok');
-            mysql_select_db('tedx_msjhs');
-            if(mysqli_connect_errno())
-            {
-                echo "Could not connect to database!";
-                exit;
-            }
-            
-            echo "<h5>I love using PHP!</h6>";
+    
             for($i=0;$i<80; $i++)
             {
                            
-              echo "<h5>I love using PHP!</h5>";
+              echo "loop";
         
             }
-             mysqli_close($db);
+          
             
             
 // FQL queries return the results in an array, so we have
