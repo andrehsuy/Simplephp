@@ -50,7 +50,7 @@
             
             
              echo "checkpoint 3";
-            $db=  mysql_connect('mysql.tedx.msjhs.net','tedxmsjhs@muphrid.dreamhost.com','ws8sn#N8957HB!ok');
+            $db=  mysql_connect('mysql.tedx.msjhs.net','tedxmsjhs','ws8sn#N8957HB!ok');
             
             if (!$db) {
                 die('Could not connect: ' . mysql_error());
