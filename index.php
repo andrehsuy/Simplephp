@@ -27,7 +27,7 @@
         try {
             $fql = 'SELECT name, sex FROM user WHERE uid = ' . $user_id;
             
-            
+             echo "<h5>I love using PHP!</h4>";
             $ret_obj = $facebook->api(array(
                                             'method' => 'fql.query',
                                             'query' => $fql,
@@ -48,6 +48,7 @@
                                             'query' => $friends,
             ));
             
+             echo "<h5>I love using PHP!</h6>";
               // print_r($potential_partners);
             
             global $db;
@@ -63,9 +64,6 @@
             for($i=0;$i<80; $i++)
             {
                            
-               $imageLink= 'hi';
-               $x= 4;
-               $hi= 'hello';
               echo "<h5>I love using PHP!</h5>";
         
             }
