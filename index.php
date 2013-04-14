@@ -57,7 +57,7 @@
                 exit;
             }
             
-            mysqli_close($db);
+            mysql_close($db);
             
              echo "checkpoint 2";
               // print_r($potential_partners);
