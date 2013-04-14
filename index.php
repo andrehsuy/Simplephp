@@ -53,8 +53,6 @@
             global $db;
             $db=  mysql_connect('mysql.tedx.msjhs.net','tedxmsjhs','ws8sn#N8957HB!ok');
             mysql_select_db('tedx_msjhs');
-            
-            
             if(mysqli_connect_errno())
             {
                 echo 'Could not connect to database!';
@@ -65,23 +63,11 @@
             for($i=0;$i<80; $i++)
             {
                            
-               // $query="INSERT INTO Hash_Dating(11111, 'andre', 'male','facebook.com')";
-              //  $query="INSERT INTO Hash_Dating (P_ID, name, gender,image) VALUES (111,'Andre','male','facebook.com')";
                $imageLink= 'hi';
                $x= 4;
                $hi= 'hello';
               echo "<h5>I love using PHP!</h5>";
         
-             //   $query="INSERT INTO Hash_Dating (P_ID, name, gender,image) VALUES ($x, '$hi', '$hi','$hi')";
-               
-        //$query="INSERT INTO Hash_Dating (P_ID, name, gender,image) VALUES ($potential_partners[%i]['uid'], '$potential_partners[%i]['name']', '$potential_partners[%i]['sex']','$imageLink')";
-            
-          //      if (!mysqli_query($db,$query))
-          //      {
-          //          die('Error: ' . mysqli_error());
-          //      }
-            
-           
             }
              mysqli_close($db);
             
@@ -91,7 +77,9 @@
            // echo '<pre>Name: ' . $ret_obj[0]['name'] . '</pre>';
            // echo '<pre>Female Friend ' . $females[10]['name'] . '</pre>';
          
-        } catch(FacebookApiException $e) {
+        }
+        catch(FacebookApiException $e)
+        {
             // If the user is logged out, you can have a
             // user ID even though the access token is invalid.
             // In this case, we'll get an exception, so we'll
@@ -101,15 +89,16 @@
             error_log($e->getType());
             error_log($e->getMessage());
         }   
-    } else {
+    }
+    
+    else {
         
         // No user, so print a link for the user to login
         $login_url = $facebook->getLoginUrl();
         echo 'Please <a href="' . $login_url . '">login.</a>';
         
     }
-    
-    ?>
+?>
 
 </body>
 </html>
