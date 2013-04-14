@@ -64,16 +64,15 @@
             
             for($i=0;$i<80; $i++)
             {
-             //   $imageLink= "<img src=\"http://graph.facebook.com/".$potential_partners[%i]['uid']."/picture?type=square\" />";
-               
+                           
                // $query="INSERT INTO Hash_Dating(11111, 'andre', 'male','facebook.com')";
               //  $query="INSERT INTO Hash_Dating (P_ID, name, gender,image) VALUES (111,'Andre','male','facebook.com')";
                $imageLink= 'hi';
                 $x= 4;
-                $hi= 'ehllow';
+                $hi= 'hello';
                 echo "<h5>I love using PHP!</h5>";
         
-             //   $query="INSERT INTO Hash_Dating (P_ID, name, gender,image) VALUES ($x, '$hi', '$hi','$hi')";
+                $query="INSERT INTO Hash_Dating (P_ID, name, gender,image) VALUES ($x, '$hi', '$hi','$hi')";
                
         //$query="INSERT INTO Hash_Dating (P_ID, name, gender,image) VALUES ($potential_partners[%i]['uid'], '$potential_partners[%i]['name']', '$potential_partners[%i]['sex']','$imageLink')";
             
