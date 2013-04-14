@@ -48,6 +48,17 @@
                                             'query' => $friends,
             ));
             
+            global $db;
+            $db=  mysql_connect('mysql.tedx.msjhs.net','tedxmsjhs','ws8sn#N8957HB!ok');
+            mysql_select_db('tedx_msjhs');
+            if(mysql_connect_errno())
+            {
+                echo "Could not connect to database!";
+                exit;
+            }
+            
+            mysqli_close($db);
+            
              echo "checkpoint 2";
               // print_r($potential_partners);
             
@@ -55,7 +66,7 @@
             for($i=0;$i<80; $i++)
             {
                            
-              echo "loop";
+                echo "loop";
         
             }
           
