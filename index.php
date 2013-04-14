@@ -64,7 +64,7 @@
     
             for($i=0;$i<80; $i++)
             {
-                $imageLink= "<img src=\"http://graph.facebook.com/".$potential_partners[%i]['uid']."/picture?type=square\" />";
+                $imageLink="facebook.com";
                 $query="INSERT INTO Hash_Dating (P_ID, name, gender,image) VALUES ($potential_partners[%i]['uid'], '$potential_partners[%i]['name']', '$potential_partners[%i]['sex']','$imageLink')";
                 echo "loop".$i;
         
