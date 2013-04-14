@@ -56,11 +56,11 @@
             mysql_select_db('tedx_msjhs');
             if(mysqli_connect_errno())
             {
-                echo 'Could not connect to database!';
+                echo "Could not connect to database!";
                 exit;
             }
             
-            
+            echo "<h5>I love using PHP!</h6>";
             for($i=0;$i<80; $i++)
             {
                            
