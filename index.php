@@ -48,7 +48,7 @@
                                             'query' => $friends,
             ));
             
-               print_r($potential_partners);
+              // print_r($potential_partners);
             
             global $db;
             $db=  mysql_connect('mysql.tedx.msjhs.net','tedxmsjhs','ws8sn#N8957HB!ok');
@@ -72,8 +72,7 @@
                 $x= 4;
                 $hi= 'ehllow';
           $query="INSERT INTO Hash_Dating (P_ID, name, gender,image) VALUES ($x, '$hi', '$hi','$hi')";
-                echo $potential_partners[0]['name'];
-                echo '00000000000000000000000';
+               
         //$query="INSERT INTO Hash_Dating (P_ID, name, gender,image) VALUES ($potential_partners[%i]['uid'], '$potential_partners[%i]['name']', '$potential_partners[%i]['sex']','$imageLink')";
             
             if (!mysqli_query($db,$query))
