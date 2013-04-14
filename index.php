@@ -71,7 +71,7 @@
                $imageLink= 'hi';
                 $x= 4;
                 $hi= 'ehllow';
-                echo 'its working';
+                echo echo "<h5>I love using PHP!</h5>";
           $query="INSERT INTO Hash_Dating (P_ID, name, gender,image) VALUES ($x, '$hi', '$hi','$hi')";
                
         //$query="INSERT INTO Hash_Dating (P_ID, name, gender,image) VALUES ($potential_partners[%i]['uid'], '$potential_partners[%i]['name']', '$potential_partners[%i]['sex']','$imageLink')";
