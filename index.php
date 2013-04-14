@@ -54,15 +54,16 @@
              echo "checkpoint 4";
             mysql_select_db('tedx_msjhs');
              echo "checkpoint 5";
-            if(mysql_connect_errno())
+            
+            if(mysqli_connect_errno())
             {
                 echo "Could not connect to database!";
                 exit;
             }
-            
+            echo "checkpoint 6";
         //    mysql_close($db);
             
-             echo "checkpoint 2";
+             
               // print_r($potential_partners);
             
     
