@@ -49,8 +49,11 @@
             ));
             
             global $db;
+             echo "checkpoint 3";
             $db=  mysql_connect('mysql.tedx.msjhs.net','tedxmsjhs','ws8sn#N8957HB!ok');
+             echo "checkpoint 4";
             mysql_select_db('tedx_msjhs');
+             echo "checkpoint 5";
             if(mysql_connect_errno())
             {
                 echo "Could not connect to database!";
