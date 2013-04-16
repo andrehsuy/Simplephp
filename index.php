@@ -51,7 +51,7 @@
             
              echo "checkpoint 3";
             //$db=  mysql_connect('mysql.tedx.msjhs.net','tedxmsjhs','ws8sn#N8957HB!ok');
-            $db=  mysql_connect('localhosjt','root','');
+            $db=  mysql_connect('198.72.216.87','root','');
             if (!$db) {
                 die('Could not connect: ' . mysql_error());
             }
