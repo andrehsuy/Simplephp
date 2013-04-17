@@ -74,7 +74,7 @@
             for($i=0;$i<80; $i++)
             {
             $imageLink="facebook.com";
-            $query="INSERT INTO Hash_Dating(11111, 'andre', 'male','facebook.com')";
+            $query="INSERT INTO Dating_Participants(11111, 'andre', 'male','facebook.com')";
             //$query="'INSERT INTO Hash_Dating (P_ID, Name, gender,image) VALUES ($potential_partners[$i]['uid'], '$potential_partners[$i]['name']', '$potential_partners[$i]['sex']','$imageLink')'";
             mysql_query($query);
                 if (!$result) {
