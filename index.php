@@ -71,7 +71,7 @@
               // print_r($potential_partners);
             
     
-            for($i=0;$i<2; $i++)
+            for($i=0;$i<1; $i++)
             {
             $imageLink="facebook.com";
             $query="'INSERT INTO Dating_Participants VALUES (1142, 'Kevin Kuo', 'male','Diamond Bar','Mt Sac','Unemployeed','Stalking','www.facebook.com/kevinkuo')'";
