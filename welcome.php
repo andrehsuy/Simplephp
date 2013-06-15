@@ -40,6 +40,9 @@
         echo "Username: $row[0]  LastName: $row[1]";
         echo "<br />\n";
     }
+    
+    $data= pg_fetch_object($result,0);
+    echo "$data->Username";
 
      
     echo "Connected successfully";
