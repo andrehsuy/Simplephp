@@ -34,9 +34,9 @@
         echo "weird" . pg_last_error();
     }
     
-      echo pg_num_rows($result);
+    echo pg_num_rows($result);
     
-    $data = pg_fetch_object($result);
+    $data = pg_fetch_object($result,0);
     
     echo $data->Username;
 
