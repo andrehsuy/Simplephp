@@ -34,9 +34,12 @@
         echo "weird" . pg_last_error();
     }
     
-    $firstRow= pg_fetch_object($result);
-    
-    echo $firstRow->Username;
+    while ($data = pg_fetch_object($result))
+    {
+        echo $data->Username;
+        echo $data->LastName;
+    }
+
      
     echo 'Connected successfully';
 
