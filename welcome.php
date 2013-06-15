@@ -14,7 +14,7 @@
     
     if (!$create)
     {
-        echo pg_result_error();
+        echo "something wrong here too" . pg_result_error();
     }
     
     $insert= pg_query($dbconn, "INSERT INTO Users VALUES(andrehsugod@ucla.edu, Hsu, Andre, justgoogleit,1992-09-15");
