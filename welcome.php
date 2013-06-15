@@ -25,14 +25,14 @@
     {
         echo "something is wrong here" . pg_last_error();
     }
-    /*
+    
     $result= pg_query($dbconn, "SELECT * FROM Users");
     
     if(!$result)
     {
-        echo "weird";
+        echo "weird" . pg_last_error();
     }
-    
+    /*
     $firstRow= $result->pg_fetch_object();
     
     echo $firstRow->Username;
