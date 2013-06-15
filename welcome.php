@@ -17,7 +17,7 @@
     {
         echo "something wrong here too" . pg_last_error();
     }
-     */
+     
     
     $insert= pg_query($dbconn, "INSERT INTO Users VALUES('andrehsugod@ucla.edu', 'Hsu', 'Andre', 'justgoogleit','1992-09-15')");
     
@@ -25,6 +25,7 @@
     {
         echo "something is wrong here" . pg_last_error();
     }
+    */
     
     $result= pg_query($dbconn, "SELECT * FROM Users");
     
