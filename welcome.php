@@ -8,6 +8,7 @@
     {
         die('Could not connect: ' . pg_last_error());
     }
+    /*
     $createTable="CREATE TABLE Users (Username varchar(255), LastName varchar(255), FirstName varchar(255), Password varchar(255), Birthday date)";
     
     $create= pg_query($dbconn, $createTable);
@@ -16,12 +17,13 @@
     {
         echo "something wrong here too" . pg_last_error();
     }
-    /*
+     */
+    
     $insert= pg_query($dbconn, "INSERT INTO Users VALUES(andrehsugod@ucla.edu, Hsu, Andre, justgoogleit,1992-09-15");
     
     if(!$insert)
     {
-        echo "something is wrong here";
+        echo "something is wrong here" . pg_last_error();
     }
     
     $result= pg_query($dbconn, "SELECT * FROM Users");
@@ -34,7 +36,7 @@
     $firstRow= $result->pg_fetch_object();
     
     echo $firstRow->Username;
-     */
+     
     echo 'Connected successfully';
 
 ?>
