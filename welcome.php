@@ -34,11 +34,13 @@
         echo "weird" . pg_last_error();
     }
     
+      echo pg_num_rows($result);
+    
     while ($data = pg_fetch_object($result))
     {
         echo $data->Username;
         echo $data->LastName;
-        echo pg_num_rows($result);
+      
     }
 
      
