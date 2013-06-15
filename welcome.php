@@ -42,7 +42,7 @@
     }
     
     $data= pg_fetch_object($result,0);
-    echo "$data->Username";
+    echo $data->Username;
 
      
     echo "Connected successfully";
