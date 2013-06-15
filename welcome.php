@@ -36,9 +36,10 @@
     
     echo pg_num_rows($result);
     
-    $row = pg_fetch_row($result);
-    
-    echo $row[0] $row[1];
+    while ($row = pg_fetch_row($result)) {
+        echo "Username: $row[0]  LastName: $row[1]";
+        echo "<br />\n";
+    }
 
      
     echo "Connected successfully";
