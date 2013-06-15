@@ -38,6 +38,7 @@
     {
         echo $data->Username;
         echo $data->LastName;
+        echo pg_num_rows($result);
     }
 
      
