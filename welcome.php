@@ -12,21 +12,21 @@
     
     $create= pg_query($dbconn, $createTable);
     
-    if (!create)
+    if (!$create)
     {
         echo pg_result_error();
     }
     
     $insert= pg_query($dbconn, "INSERT INTO Users VALUES(andrehsugod@ucla.edu, Hsu, Andre, justgoogleit,9/15/1992");
     
-    if(!insert)
+    if(!$insert)
     {
         echo "something is wrong here";
     }
     
     $result= pg_query($dbconn, "SELECT * FROM Users");
     
-    if(!result)
+    if(!$result)
     {
         echo "weird";
     }
