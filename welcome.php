@@ -36,9 +36,9 @@
     
     echo pg_num_rows($result);
     
-    $data = pg_fetch_object($result,0);
+    $row = pg_fetch_row($result);
     
-    echo $data->Username;
+    echo $row[0] $row[1];
 
      
     echo "Connected successfully";
