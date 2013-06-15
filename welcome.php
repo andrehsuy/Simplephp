@@ -36,14 +36,11 @@
     
       echo pg_num_rows($result);
     
-    while ($data = pg_fetch_object($result))
-    {
-        echo $data->Username;
-        echo $data->LastName;
-      
-    }
+    $data = pg_fetch_object($result);
+    
+    echo $data->Username;
 
      
-    echo 'Connected successfully';
+    echo "Connected successfully";
 
 ?>
