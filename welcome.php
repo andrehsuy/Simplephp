@@ -8,6 +8,9 @@
     {
         die('Could not connect: ' . pg_last_error());
     }
+    $createTable="CREATE TABLE Users Username varchar(255), LastName varchar(255), FirstName varchar(255), Password varchar(255), Birthday date";
+    
+    //$result = pg_query($dbconn, "SELECT author, email FROM authors");
     
     echo 'Connected successfully';
 
