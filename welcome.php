@@ -16,7 +16,7 @@
     {
         echo pg_result_error();
     }
-    /*
+    
     $insert= pg_query($dbconn, "INSERT INTO Users VALUES(andrehsugod@ucla.edu, Hsu, Andre, justgoogleit,9/15/1992");
     
     $result= pg_query($dbconn, "SELECT * FROM Users");
@@ -24,7 +24,7 @@
     $firstRow= $result->fetch_object();
     
     echo $firstRow->Username;
-    */
+    
     echo 'Connected successfully';
 
 ?>
