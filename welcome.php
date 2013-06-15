@@ -30,11 +30,11 @@
     {
         echo "weird";
     }
-    
+    /*
     $firstRow= $result->fetch_object();
     
     echo $firstRow->Username;
-    
+     */
     echo 'Connected successfully';
 
 ?>
