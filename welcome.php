@@ -9,8 +9,11 @@
         die('Could not connect: ' . pg_last_error());
     }
     $createTable="CREATE TABLE Users Username varchar(255), LastName varchar(255), FirstName varchar(255), Password varchar(255), Birthday date";
-    
-    //$result = pg_query($dbconn, "SELECT author, email FROM authors");
+    $create= pg_query($dbconn, $createTable);
+    $insert= pg_query($dbconn, "INSERT INTO Users VALUES(andrehsugod@ucla.edu, Hsu, Andre, justgoogleit,9/15/1992");
+    $result= pg_query($dbconn, "SELECT * FROM Users");
+    $firstRow= $result->fetch_object();
+    echo $firstRow->Username;
     
     echo 'Connected successfully';
 
