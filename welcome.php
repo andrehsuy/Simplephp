@@ -23,13 +23,18 @@
     {
         echo "something is wrong here";
     }
-    /*
+    
     $result= pg_query($dbconn, "SELECT * FROM Users");
+    
+    if(!result)
+    {
+        echo "weird";
+    }
     
     $firstRow= $result->fetch_object();
     
     echo $firstRow->Username;
-    */
+    
     echo 'Connected successfully';
 
 ?>
