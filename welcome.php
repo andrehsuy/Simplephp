@@ -32,11 +32,11 @@
     {
         echo "weird" . pg_last_error();
     }
-    /*
-    $firstRow= $result->pg_fetch_object();
+    
+    $firstRow= pg_fetch_object($result);
     
     echo $firstRow->Username;
-     */
+     
     echo 'Connected successfully';
 
 ?>
