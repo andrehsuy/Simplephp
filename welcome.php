@@ -14,9 +14,9 @@
     
     if (!$create)
     {
-        echo "something wrong here too" . pg_result_error();
+        echo "something wrong here too" . pg_last_error();
     }
-    
+    /*
     $insert= pg_query($dbconn, "INSERT INTO Users VALUES(andrehsugod@ucla.edu, Hsu, Andre, justgoogleit,1992-09-15");
     
     if(!$insert)
@@ -31,10 +31,10 @@
         echo "weird";
     }
     
-    $firstRow= $result->fetch_object();
+    $firstRow= $result->pg_fetch_object();
     
     echo $firstRow->Username;
-     
+     */
     echo 'Connected successfully';
 
 ?>
