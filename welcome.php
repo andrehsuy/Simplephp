@@ -25,7 +25,7 @@
     {
         echo "something is wrong here" . pg_last_error();
     }
-    
+    /*
     $result= pg_query($dbconn, "SELECT * FROM Users");
     
     if(!$result)
@@ -36,7 +36,7 @@
     $firstRow= $result->pg_fetch_object();
     
     echo $firstRow->Username;
-     
+     */
     echo 'Connected successfully';
 
 ?>
