@@ -17,7 +17,7 @@
         echo pg_result_error();
     }
     
-    $insert= pg_query($dbconn, "INSERT INTO Users VALUES(andrehsugod@ucla.edu, Hsu, Andre, justgoogleit,9/15/1992");
+    $insert= pg_query($dbconn, "INSERT INTO Users VALUES(andrehsugod@ucla.edu, Hsu, Andre, justgoogleit,1992-09-15");
     
     if(!$insert)
     {
@@ -30,11 +30,11 @@
     {
         echo "weird";
     }
-    /*
+    
     $firstRow= $result->fetch_object();
     
     echo $firstRow->Username;
-     */
+     
     echo 'Connected successfully';
 
 ?>
