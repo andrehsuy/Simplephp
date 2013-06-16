@@ -41,9 +41,14 @@
         echo "<br />\n";
     }
     
-    while ($data = pg_fetch_object($result)) {
-        echo "$data->Username";
-    }
+    $row = 0; // postgres needs a row counter other dbs might not
+    
+     while ($data = pg_fetch_object ($result, $row)):
+         echo $data->Username." (";
+         echo $data->LastName ."): ";
+         echo $data->FirstName."<BR>";
+         $row++;
+     endwhile;
 
      
     echo "Connected successfully";
