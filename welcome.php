@@ -27,6 +27,7 @@
     }
     */
     
+    /*
     $result= pg_query($dbconn, "SELECT * FROM Users");
     
     if(!$result)
@@ -40,8 +41,10 @@
         echo "Username: $row[0]  LastName: $row[1]";
         echo "<br />\n";
     }
+     
+     */
     
-    $qu = pg_exec ($db_conn, "SELECT * FROM Users");
+    $qu = pg_query ($db_conn, "SELECT * FROM Users");
     
     $row = 0; // postgres needs a row counter other dbs might not
     
