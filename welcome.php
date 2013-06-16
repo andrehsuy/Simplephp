@@ -41,9 +41,11 @@
         echo "<br />\n";
     }
     
+    $qu = pg_exec ($db_conn, "SELECT * FROM Users");
+    
     $row = 0; // postgres needs a row counter other dbs might not
     
-     while ($data = pg_fetch_object ($result, $row)):
+     while ($data = pg_fetch_object ($qu, $row)):
          echo $data->Username." (";
          echo $data->LastName ."): ";
          echo $data->FirstName."<BR>";
