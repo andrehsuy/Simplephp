@@ -42,9 +42,7 @@
     }
     
     while ($data = pg_fetch_object($result)) {
-        echo $data->Username . " (";
-        echo $data->LastName . "): ";
-        echo $data->FirstName . "<br />";
+        echo "$data->Username";
     }
 
      
