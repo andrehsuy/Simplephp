@@ -48,6 +48,10 @@
     
     $row = 0; // postgres needs a row counter other dbs might not
     $data= pg_fetch_object($qu,$row);
+    if(!$data)
+    {
+        echo "somethin went wrong : " . pg_last_error();
+    }
     if(isset($data->Username))
     {
         echo "variable is set";
