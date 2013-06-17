@@ -50,9 +50,9 @@
     
     
      while ($data = pg_fetch_object ($qu, $row)):
-         echo $(data->Username)." (";
-         echo $(data->LastName) ."): ";
-         echo $(data->FirstName)."<BR>";
+         echo $data['Username'] ." (";
+         echo $data['LastName'] ."): ";
+         echo $data['FirstName'] ."<BR>";
          $row++;
      endwhile;
      
