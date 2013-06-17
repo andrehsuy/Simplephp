@@ -35,26 +35,22 @@
         echo "weird" . pg_last_error();
     }
     
-
-    
-    while ($row = pg_fetch_row($result)) {
+     while ($row = pg_fetch_row($result)) {
         echo "Username: $row[0]  LastName: $row[1]";
         echo "<br />\n";
     }
      
      */
+    $qu= pg_query($dbconn, "SELECT * FROM Users");
     
-    $qu = pg_query ($db_conn, "SELECT * FROM Users");
-    
-    $row = 0; // postgres needs a row counter other dbs might not
+    $data = pg_fetch_object($qu);
     
     
-     while ($data = pg_fetch_object ($qu, $row)):
-         echo $data['Username'] ." (";
-         echo $data['LastName'] ."): ";
-         echo $data['FirstName'] ."<BR>";
-         $row++;
-     endwhile;
+    
+    echo $data->username;
+    echo $data->lastname;
+    echo $data->firstname;
+    
      
      
     echo "Connected successfully";
