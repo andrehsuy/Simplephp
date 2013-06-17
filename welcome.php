@@ -47,23 +47,15 @@
     $qu = pg_query ($db_conn, "SELECT * FROM Users");
     
     $row = 0; // postgres needs a row counter other dbs might not
-    $data= pg_fetch_object($qu,$row);
-    if(!$data)
-    {
-        echo "somethin went wrong : " . pg_result_error_field();
-    }
-    if(isset($data->Username))
-    {
-        echo "variable is set";
-    }
-    /*
+    
+    
      while ($data = pg_fetch_object ($qu, $row)):
-         echo $data->Username." (";
-         echo $data->LastName ."): ";
-         echo $data->FirstName."<BR>";
+         echo $(data->Username)." (";
+         echo $(data->LastName) ."): ";
+         echo $(data->FirstName)."<BR>";
          $row++;
      endwhile;
-     */
+     
      
     echo "Connected successfully";
 
