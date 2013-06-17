@@ -50,7 +50,7 @@
     $data= pg_fetch_object($qu,$row);
     if(!$data)
     {
-        echo "somethin went wrong : " . pg_last_error();
+        echo "somethin went wrong : " . pg_result_error_field();
     }
     if(isset($data->Username))
     {
