@@ -1,3 +1,4 @@
+
 <?php
 
     echo 'Welcome';
@@ -23,11 +24,11 @@
     
     if(!$insert)
     {
-        echo "something is wrong here" . pg_last_error();
+        echo "Something is wrong with insert" . pg_last_error();
     }
-    */
     
-    /*
+    
+    
     $result= pg_query($dbconn, "SELECT * FROM Users");
     
     if(!$result)
@@ -40,7 +41,6 @@
         echo "<br />\n";
     }
      
-     */
     $qu= pg_query($dbconn, "SELECT * FROM Users");
     
     $data = pg_fetch_object($qu);
@@ -50,9 +50,16 @@
     echo $data->username;
     echo $data->lastname;
     echo $data->firstname;
-    
      
+     */
      
-    echo "Connected successfully";
 
 ?>
+
+<form>
+First name: <input type="text" name="firstname"><br>
+Last name: <input type="text" name="lastname">
+Password: <input type="password" name="password1">
+Password2: <input type="password" name="password2">
+Birthday: <input type="time" name="birthday">
+</form>
