@@ -1,4 +1,5 @@
-
+<html>
+<body>
 <?php
 
     echo 'Welcome';
@@ -52,14 +53,18 @@
     echo $data->firstname;
      
      */
-     
+     echo  $_SERVER['SERVER_NAME'];
 
 ?>
 
-<form>
+
+<form action="welcome.php" method="post">
 First name: <input type="text" name="firstname"><br>
-Last name: <input type="text" name="lastname">
-Password: <input type="password" name="password1">
-Password2: <input type="password" name="password2">
-Birthday: <input type="time" name="birthday">
+Last name: <input type="text" name="lastname"><br>
+Password: <input type="password" name="password1"><br>
+Password2: <input type="password" name="password2"><br>
+Birthday: <input type="time" name="birthday"><br>
 </form>
+
+</body>
+</html>
