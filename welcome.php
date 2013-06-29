@@ -60,7 +60,36 @@
     </head>
     <body>
 
-
+    <?php
+        require_once "Mail.php";
+        
+        $from = "<andrehsugod.gmail.com>";
+        $to = "<andrehsugod.gmail.com>";
+        $subject = "Hi!";
+        $body = "Hi,\n\nHow are you?";
+        
+        $host = "smtp.gmail.com";
+        $port = "465";
+        $username = "andrehsugod@gmail.com";
+        $password = "Aa1992915";
+        
+        $headers = array ('From' => $from,
+                          'To' => $to,
+                          'Subject' => $subject);
+        $smtp = Mail::factory('smtp',
+                              array ('host' => $host,
+                                     'port' => $port,
+                                     'auth' => true,
+                                     'username' => $username,
+                                     'password' => $password));
+        
+        $mail = $smtp->send($to, $headers, $body);
+        
+        if (PEAR::isError($mail)) {
+            echo("<p>" . $mail->getMessage() . "</p>");
+        } else {
+            echo("<p>Message successfully sent!</p>");
+        }    ?>
 
 
     <?php
@@ -87,14 +116,6 @@
         else
         {
             
-            $to      = $POST_['email'];
-            $subject = 'Email Confirmation';
-            $message = 'Testing';
-            $headers = 'From: andrehsugod@gmail.com' . "\r\n" .
-            'Reply-To: andrehsugod@gmail.com' . "\r\n" .
-            'X-Mailer: PHP/' . phpversion();
-            
-            mail($to, $subject, $message, $headers);
             
     
         }
@@ -116,7 +137,6 @@
     
     ?>
 
-<?php phpinfo(); ?>
 
             <form id="sign_up_form" action="<?php echo $_SERVER['PHP_SELF'] ?>" onsubmit="return validate(event)" method="post">
             <input type="text" name="firstname" placeholder="First Name"><br>
