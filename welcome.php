@@ -60,37 +60,7 @@
     </head>
     <body>
 
-    <?php
-        require_once "Mail.php";
-        
-        $from = "<andrehsugod.gmail.com>";
-        $to = "<andrehsugod.gmail.com>";
-        $subject = "Hi!";
-        $body = "Hi,\n\nHow are you?";
-        
-        $host = "smtp.gmail.com";
-        $port = "465";
-        $username = "andrehsugod@gmail.com";
-        $password = "Aa1992915";
-        
-        $headers = array ('From' => $from,
-                          'To' => $to,
-                          'Subject' => $subject);
-        $smtp = Mail::factory('smtp',
-                              array ('host' => $host,
-                                     'port' => $port,
-                                     'auth' => true,
-                                     'username' => $username,
-                                     'password' => $password));
-        
-        $mail = $smtp->send($to, $headers, $body);
-        
-        if (PEAR::isError($mail)) {
-            echo("<p>" . $mail->getMessage() . "</p>");
-        } else {
-            echo("<p>Message successfully sent!</p>");
-        }    ?>
-
+    
 
     <?php
     
@@ -115,7 +85,35 @@
         }
         else
         {
+            require_once "Mail.php";
             
+            $from = "Andre Hsu <andrehsugod@gmail.com>";
+            $to = "${_POST['firstname']} ${_POST['lastname']} <${_POST['email']}>";
+            $subject = "Welcome! Here is your confirmation";
+            $body = "Please follow the link below to verify your email address!";
+            
+            $host = "smtp.gmail.com";
+            $port = 587;
+            $username = "andrehsugod@gmail.com";
+            $password = "Aa1992915";
+            
+            $headers = array ('From' => $from,
+                              'To' => $to,
+                              'Subject' => $subject);
+            $smtp = Mail::factory('smtp',
+                                  array ('host' => $host,
+                                         'port' => $port,
+                                         'auth' => true,
+                                         'username' => $username,
+                                         'password' => $password));
+            
+            $mail = $smtp->send($to, $headers, $body);
+            
+            if (PEAR::isError($mail)) {
+                echo("<p>" . $mail->getMessage() . "</p>");
+            } else {
+                echo("<p>Message successfully sent!</p>");
+            }
             
     
         }
