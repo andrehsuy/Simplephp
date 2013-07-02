@@ -15,25 +15,18 @@
     
         echo $_GET['userkey'];
     
-    $select= pg_query($dbconn, "SELECT * FROM Temp_Users where Userkey=\'${_GET['userkey']}\'");
+    $select= pg_query($dbconn, "SELECT * FROM Temp_Users where Userkey='${_GET['userkey']}'");
         
     if(!$select)
     {
         echo "something is wrong with select";
     }
         
-    
-        while ($selectRow = pg_fetch_row($select)) {
-            echo "Username: $row[0]  LastName: $row[1] FirstName: $row[2] birthday:$row[4] Userkey: $row[5]";
-            echo "<br />\n";
-        }
+    $selectRow = pg_fetch_row($select)
 
-        
-    //$sql='INSERT INTO Users(Username, LastName, FirstName, Password, Birthday, Userkey) VALUES (\''.$row[0].'\',\''.$row[1].'\',\''.$row[2].'\',\''.$row[3].'\',\''.$row[4].'\',\''.$row[5].'\')';
+    $sql='INSERT INTO Users(Username, LastName, FirstName, Password, Birthday, Userkey) VALUES (\''.$selectRow[0].'\',\''.$selectRow[1].'\',\''.$selectRow[2].'\',\''.$selectRow[3].'\',\''.'9/14/1992'.'\',\''.$selectRow[5].'\')';
     
-        
-        
-    /*$insert= pg_query($dbconn, $sql);
+    $insert= pg_query($dbconn, $sql);
     
     if(!$insert)
     {
@@ -57,7 +50,7 @@
 
             
         }  
-     */
+     
     }
 
 ?>
