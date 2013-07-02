@@ -8,7 +8,7 @@
         
     }
 
-    $createTable="DELETE FROM Users";
+    $createTable="DELETE FROM Temp_Users";
     
     $create= pg_query($dbconn, $createTable);
     

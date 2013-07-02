@@ -24,7 +24,7 @@
         
         $selectRow = pg_fetch_row($select);
         
-        $sql='INSERT INTO Temp_Users(Username, LastName, FirstName, Password, Birthday, Userkey) VALUES (\''.$selectRow[0].'\',\''.$selectRow[1].'\',\''.$selectRow[2].'\',\''.$selectRow[3].'\',\''.'9/15/1992'.'\',\''.$selectRow[5].'\')';
+        $sql='INSERT INTO Users(Username, LastName, FirstName, Password, Birthday, Userkey) VALUES (\''.$selectRow[0].'\',\''.$selectRow[1].'\',\''.$selectRow[2].'\',\''.$selectRow[3].'\',\''.'9/15/1992'.'\',\''.$selectRow[5].'\')';
         
         $insert= pg_query($dbconn, $sql);
         
