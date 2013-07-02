@@ -2,6 +2,9 @@
 
     if(isset($_GET['userkey']))
     {
+        
+        echo "inside ";
+        
     $dbconn = pg_connect("host=ec2-23-21-85-233.compute-1.amazonaws.com port=5432 dbname=d3m7bds1jom9ml user=bwhsvkshzcmema password=1zleSvvgAStyG9Wv0sBri188qW sslmode=require options='--client_encoding=UTF8'");
     
     if (!$dbconn)
@@ -11,11 +14,11 @@
     }
     
     
-    $select= pg_query($dbconn, "SELECT * FROM Temp_Users where Userkey='$_GET['userkey']'");
+    $select= pg_query($dbconn, "SELECT * FROM Temp_Users where Userkey='${_GET['userkey']}'");
         
     if($select)
     {
-        die('something userkey select');
+        echo "something is wrong with select";
     }
         
     $selectRow= pg_fetch_row($select);
