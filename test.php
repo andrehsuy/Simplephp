@@ -25,4 +25,12 @@
         echo $mail->getMessage();
     else
         echo "succefully connect to server";
+   
+    $mail = $smtp->send($to, $headers, $body);
+    
+    if (PEAR::isError($mail)) {
+        echo("error" . $mail->getMessage());
+    } else {
+        echo("<p>Message successfully sent!</p>");
+    }
 ?>
