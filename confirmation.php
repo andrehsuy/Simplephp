@@ -19,7 +19,7 @@
         
         if(!$select)
         {
-            echo "something is wrong with select";
+            die('Could not select: ' . pg_last_error());
         }
         
         $selectRow = pg_fetch_row($select);
@@ -32,26 +32,28 @@
         
         if(!$insert)
         {
-            echo "Something is wrong with insert" . pg_last_error();
+            die('Could not insert: ' . pg_last_error());
         }
         else
         {
-            echo "successfully inserted";
-            
+            echo "Congratulations! You can now get started!";
+            /*
             $result= pg_query($dbconn, "SELECT * FROM Users");
             
             if(!$result)
             {
-                echo "Something is wrong with select" . pg_last_error();
+                die('Could not select: ' . pg_last_error());
             }
+            
             
             while ($row = pg_fetch_row($result)) {
                 echo "Username: $row[0]  LastName: $row[1] FirstName: $row[2] birthday:$row[4] Userkey: $row[5]";
                 echo "<br />\n";
             }
+            */
             
             
-        }
+         }
      
     }
 

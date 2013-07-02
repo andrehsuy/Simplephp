@@ -82,7 +82,7 @@
         
         if(!$insert)
         {
-            echo "Something is wrong with insert" . pg_last_error();
+            die('Could not insert: ' . pg_last_error());
         }
         else
         {
@@ -123,16 +123,21 @@
         
         if(!$result)
         {
-            echo "Something is wrong with select" . pg_last_error();
+            die('Could not select: ' . pg_last_error());
         }
         
+        echo "You have signed up successfully! Please check your email for verification.";
+        
+        /*
         while ($row = pg_fetch_row($result)) {
             echo "Username: $row[0]  LastName: $row[1] FirstName: $row[2] birthday:$row[4] Userkey: $row[5]";
             echo "<br />\n";
+         
         }
+        */
         
         
-    }
+     }
     
     ?>
 
