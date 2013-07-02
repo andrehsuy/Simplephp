@@ -64,17 +64,18 @@
 
     <?php
     
-    $dbconn = pg_connect("host=ec2-23-21-85-233.compute-1.amazonaws.com port=5432 dbname=d3m7bds1jom9ml user=bwhsvkshzcmema password=1zleSvvgAStyG9Wv0sBri188qW sslmode=require options='--client_encoding=UTF8'");
-    
-    if (!$dbconn)
-    {
-        die('Could not connect: ' . pg_last_error());
-        
-    }
-    
     if(isset($_POST['submit']))
     {
+        $dbconn = pg_connect("host=ec2-23-21-85-233.compute-1.amazonaws.com port=5432 dbname=d3m7bds1jom9ml user=bwhsvkshzcmema password=1zleSvvgAStyG9Wv0sBri188qW sslmode=require options='--client_encoding=UTF8'");
+        
+        if (!$dbconn)
+        {
+            die('Could not connect: ' . pg_last_error());
+            
+        }
+        
         $key= hash ( 'md5' , $_POST['email']);
+        
         $sql='INSERT INTO Temp_Users(Username, LastName, FirstName, Password, Birthday, Userkey) VALUES (\''.$_POST['email'].'\',\''.$_POST['lastname'].'\',\''.$_POST['firstname'].'\',\''.$_POST['password1'].'\',\''.$_POST['birthday'].'\',\''.$key.'\')';
         
         $insert= pg_query($dbconn, $sql);
@@ -90,7 +91,7 @@
             $from = "Andre Hsu <andrehsugod@gmail.com>";
             $to = "${_POST['firstname']} ${_POST['lastname']} <${_POST['email']}>";
             $subject = "Welcome! Here is your confirmation";
-            $body = 'Please follow the link below to verify your email address! <a href= http://andrehsu.herokuapp.com/welcome.php?userkey='.$key.'>Confirm Here!</a>';
+            $body = 'Please follow the link below to verify your email address! http://andrehsu.herokuapp.com/confirmation.php?userkey='.$key;
             
             $host = "smtp.gmail.com";
             $port = 587;

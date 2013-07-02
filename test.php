@@ -8,7 +8,7 @@
         
     }
 
-    $createTable="CREATE TABLE Temp_Users (Username varchar(255), LastName varchar(255), FirstName varchar(255), Password varchar(255), Birthday date, Userkey varchar(255))";
+    $createTable="DELETE FROM Temp_Users";
     
     $create= pg_query($dbconn, $createTable);
     
