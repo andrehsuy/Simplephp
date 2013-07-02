@@ -90,7 +90,7 @@
             $from = "Andre Hsu <andrehsugod@gmail.com>";
             $to = "${_POST['firstname']} ${_POST['lastname']} <${_POST['email']}>";
             $subject = "Welcome! Here is your confirmation";
-            $body = 'Please follow the link below to verify your email address! <a href= http://andrehsu.herokuapp.com/welcome.php?userkey='.$key.'</a>';
+            $body = 'Please follow the link below to verify your email address! <a href= http://andrehsu.herokuapp.com/welcome.php?userkey='.$key.'>Confirm Here!</a>';
             
             $host = "smtp.gmail.com";
             $port = 587;
