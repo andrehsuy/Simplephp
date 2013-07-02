@@ -8,7 +8,7 @@
     $body = "Hi,\n\nHow are you?";
     
     $host = "smtp.gmail.com";
-    $port = 465;
+    $port = 587; 
     $username = "andrehsugod@gmail.com";
     $password = "Aa1992915";
     
