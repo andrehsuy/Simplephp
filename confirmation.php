@@ -1,6 +1,6 @@
 <?php
 
-    if(isset($_GET['Userkey']))
+    if(isset($_GET['userkey']))
     {
     $dbconn = pg_connect("host=ec2-23-21-85-233.compute-1.amazonaws.com port=5432 dbname=d3m7bds1jom9ml user=bwhsvkshzcmema password=1zleSvvgAStyG9Wv0sBri188qW sslmode=require options='--client_encoding=UTF8'");
     
