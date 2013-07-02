@@ -21,6 +21,8 @@
                                  'auth' => true,
                                  'username' => $username,
                                  'password' => $password));
-    
-    
+    if(PEAR::isError($smtp))
+        echo $mail->getMessage();
+    else
+        echo "succefully connect to server";
 ?>
