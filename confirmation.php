@@ -13,8 +13,9 @@
         
     }
     
+        echo $_GET['userkey'];
     
-    $select= pg_query($dbconn, "SELECT * FROM Temp_Users where Userkey='${_GET['userkey']}'");
+    $select= pg_query($dbconn, "SELECT * FROM Temp_Users where Userkey=\'${_GET['userkey']}\'");
         
     if(!$select)
     {
