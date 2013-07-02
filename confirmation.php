@@ -23,8 +23,10 @@
         }
         
         $selectRow = pg_fetch_row($select);
+        $date = new DateTime($selectRow[4]);
+        $formattedDate=  $date->format('m/d/Y');
         
-        $sql='INSERT INTO Users(Username, LastName, FirstName, Password, Birthday, Userkey) VALUES (\''.$selectRow[0].'\',\''.$selectRow[1].'\',\''.$selectRow[2].'\',\''.$selectRow[3].'\',\''.'9/15/1992'.'\',\''.$selectRow[5].'\')';
+        $sql='INSERT INTO Users(Username, LastName, FirstName, Password, Birthday, Userkey) VALUES (\''.$selectRow[0].'\',\''.$selectRow[1].'\',\''.$selectRow[2].'\',\''.$selectRow[3].'\',\''.$formattedDate.'\',\''.$selectRow[5].'\')';
         
         $insert= pg_query($dbconn, $sql);
         
