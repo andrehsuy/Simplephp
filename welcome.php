@@ -74,8 +74,8 @@
     
     if(isset($_POST['submit']))
     {
-        
-        $sql='INSERT INTO Users (Username, LastName, FirstName, Password, Birthday) VALUES (\''.$_POST['email'].'\',\''.$_POST['lastname'].'\',\''.$_POST['firstname'].'\',\''.$_POST['password1'].'\',\''.$_POST['birthday'].'\')';
+        $key= hash ( 'md5' , $_POST['email']);
+        $sql='INSERT INTO Temp_Users(Username, LastName, FirstName, Password, Birthday, Userkey) VALUES (\''.$_POST['email'].'\',\''.$_POST['lastname'].'\',\''.$_POST['firstname'].'\',\''.$_POST['password1'].'\',\''.$_POST['birthday'].'\',\''.$key.'\')';
         
         $insert= pg_query($dbconn, $sql);
         
@@ -90,7 +90,7 @@
             $from = "Andre Hsu <andrehsugod@gmail.com>";
             $to = "${_POST['firstname']} ${_POST['lastname']} <${_POST['email']}>";
             $subject = "Welcome! Here is your confirmation";
-            $body = "Please follow the link below to verify your email address!";
+            $body = 'Please follow the link below to verify your email address! <a href= http://andrehsu.herokuapp.com/welcome.php?userkey='.$key.'</a>';
             
             $host = "smtp.gmail.com";
             $port = 587;
@@ -118,7 +118,7 @@
     
         }
         
-        $result= pg_query($dbconn, "SELECT * FROM Users");
+        $result= pg_query($dbconn, "SELECT * FROM Temp_Users");
         
         if(!$result)
         {
@@ -126,7 +126,7 @@
         }
         
         while ($row = pg_fetch_row($result)) {
-            echo "Username: $row[0]  LastName: $row[1] FirstName: $row[2] birthday:$row[4]";
+            echo "Username: $row[0]  LastName: $row[1] FirstName: $row[2] birthday:$row[4] Userkey: $row[5]";
             echo "<br />\n";
         }
         

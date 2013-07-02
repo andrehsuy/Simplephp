@@ -1,36 +1,21 @@
 <?php
     
-    require_once "Mail.php";
+    $dbconn = pg_connect("host=ec2-23-21-85-233.compute-1.amazonaws.com port=5432 dbname=d3m7bds1jom9ml user=bwhsvkshzcmema password=1zleSvvgAStyG9Wv0sBri188qW sslmode=require options='--client_encoding=UTF8'");
     
-    $from = "Andre Hsu <andrehsugod@gmail.com>";
-    $to = "Andre Hsu <andrehsugod@ucla.edu>";
-    $subject = "Hi!";
-    $body = "Hi,\n\nHow are you?";
-    
-    $host = "smtp.gmail.com";
-    $port = 587; 
-    $username = "andrehsugod@gmail.com";
-    $password = "Aa1992915";
-    
-    $headers = array ('From' => $from,
-                      'To' => $to,
-                      'Subject' => $subject);
-    $smtp = Mail::factory('smtp',
-                          array ('host' => $host,
-                                 'port' => $port,
-                                 'auth' => true,
-                                 'username' => $username,
-                                 'password' => $password));
-    if(PEAR::isError($smtp))
-        echo $mail->getMessage();
-    else
-        echo "succefully connect to server";
-   
-    $mail = $smtp->send($to, $headers, $body);
-    
-    if (PEAR::isError($mail)) {
-        echo("error" . $mail->getMessage());
-    } else {
-        echo("<p>Message successfully sent!</p>");
+    if (!$dbconn)
+    {
+        die('Could not connect: ' . pg_last_error());
+        
     }
-?>
+
+    $createTable="CREATE TABLE Temp_Users (Username varchar(255), LastName varchar(255), FirstName varchar(255), Password varchar(255), Birthday date, Userkey varchar(255))";
+    
+    $create= pg_query($dbconn, $createTable);
+    
+    if (!$create)
+    {
+        echo "something wrong here too" . pg_last_error();
+    }
+
+    
+    ?>
