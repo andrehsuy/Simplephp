@@ -10,10 +10,20 @@
         
     }
     
-    $key= hash ( 'md5' , $_POST['email']);
     
-    $sql='INSERT INTO Users(Username, LastName, FirstName, Password, Birthday, Userkey) VALUES (\''.$_POST['email'].'\',\''.$_POST['lastname'].'\',\''.$_POST['firstname'].'\',\''.$_POST['password1'].'\',\''.$_POST['birthday'].'\',\''.$key.'\')';
+    $select= pg_query($dbconn, "SELECT * FROM Temp_Users where Userkey='$_GET['userkey']'");
+        
+    if($select)
+    {
+        die('something userkey select');
+    }
+        
+    $selectRow= pg_fetch_row($select);
+        
+    $sql='INSERT INTO Users(Username, LastName, FirstName, Password, Birthday, Userkey) VALUES (\''.$row[0].'\',\''.$row[1].'\',\''.$row[2].'\',\''.$row[3].'\',\''.$row[4].'\',\''.$row[5].'\')';
     
+        
+        
     $insert= pg_query($dbconn, $sql);
     
     if(!$insert)
