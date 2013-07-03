@@ -3,6 +3,37 @@
 
     <title>Sign up form</title>
 
+<script type="text/javascript">
+
+/***********************************************
+ * Drop Down Date select script- by JavaScriptKit.com
+ * This notice MUST stay intact for use
+ * Visit JavaScript Kit at http://www.javascriptkit.com/ for this script and more
+ ***********************************************/
+
+var monthtext=['Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sept','Oct','Nov','Dec'];
+
+function populatedropdown(dayfield, monthfield, yearfield){
+    var today=new Date()
+    var dayfield=document.getElementById(dayfield)
+    var monthfield=document.getElementById(monthfield)
+    var yearfield=document.getElementById(yearfield)
+    for (var i=0; i<31; i++)
+        dayfield.options[i]=new Option(i+1, i+1)
+        for (var m=0; m<12; m++)
+            monthfield.options[m]=new Option(monthtext[m], m+1)
+            
+            var thisyear=today.getFullYear()
+            for (var y=0; y<50; y++){
+                yearfield.options[y]=new Option(thisyear-50, thisyear-50)
+                thisyear+=1
+            }
+    
+}
+
+</script>
+
+
     <script type="text/javascript">
     function validate(event)
     {
@@ -76,7 +107,11 @@
         
         $key= hash ( 'md5' , $_POST['email']);
         
-        $sql='INSERT INTO Temp_Users(Username, LastName, FirstName, Password, Birthday, Userkey) VALUES (\''.$_POST['email'].'\',\''.$_POST['lastname'].'\',\''.$_POST['firstname'].'\',\''.$_POST['password1'].'\',\''.$_POST['birthday'].'\',\''.$key.'\')';
+        
+        $birthday= $_POST['monthdropdown'].'/'.$_POST['daydropdown'].'/'.$_POST['yeardropdown'];
+        
+        
+        $sql='INSERT INTO Temp_Users(Username, LastName, FirstName, Password, Birthday, Userkey) VALUES (\''.$_POST['email'].'\',\''.$_POST['lastname'].'\',\''.$_POST['firstname'].'\',\''.$_POST['password1'].'\',\''.$birthday.'\',\''.$key.'\')';
         
         $insert= pg_query($dbconn, $sql);
         
@@ -118,7 +153,7 @@
             
     
         }
-        
+        /*
         $result= pg_query($dbconn, "SELECT * FROM Temp_Users");
         
         if(!$result)
@@ -128,7 +163,7 @@
         
         echo "You have signed up successfully! Please check your email for verification.";
         
-        /*
+        
         while ($row = pg_fetch_row($result)) {
             echo "Username: $row[0]  LastName: $row[1] FirstName: $row[2] birthday:$row[4] Userkey: $row[5]";
             echo "<br />\n";
