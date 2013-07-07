@@ -55,7 +55,7 @@ function populatedropdown(dayfield, monthfield, yearfield){
             temp3.parentNode.removeChild(temp3);
         }
         
-        if(event.target.firstname.value=="" || event.target.lastname.value=="" || event.target.email.value=="" || event.target.password1.value=="" || event.target.password2.value=="" || event.target.birthday.value=="")
+        if(event.target.firstname.value=="" || event.target.lastname.value=="" || event.target.email.value=="" || event.target.password1.value=="" || event.target.password2.value=="")
         {
             var newel=document.createElement("p");
             var t=document.createTextNode("*You must fill in all of the fields.");
@@ -173,13 +173,39 @@ function populatedropdown(dayfield, monthfield, yearfield){
         
         
      }
-    else
-        {
-            include 'signupform.php';
-        }
-        
         
     ?>
+
+
+<form id="sign_up_form" action="<?php echo $_SERVER['PHP_SELF'] ?>" onsubmit="return validate(event)" method="post">
+
+<input type="text" name="firstname" placeholder="First Name">
+<br>
+<input type="text" name="lastname" placeholder="Last Name">
+<br>
+<input type="text" name="email" placeholder="Email">
+<br>
+<input type="password" name="password1" placeholder="New Password">
+<br>
+<input type="password" name="password2" placeholder="Re-enter">
+<br>
+
+Birthday
+<br>
+<select id="daydropdown" name="daydropdown"> </select>
+<select id="monthdropdown" name="monthdropdown"> </select>
+<select id="yeardropdown" name="yeardropdown"></select><br>
+
+<script type="text/javascript">
+window.onload=function()
+{
+    populatedropdown("daydropdown", "monthdropdown", "yeardropdown")
+}
+</script>
+
+<input type="submit" name="submit">
+
+</form>
 
 
 
