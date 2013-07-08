@@ -37,7 +37,7 @@
         else
         {
             echo "Congratulations! You can now get started!";
-            /*
+            
             $result= pg_query($dbconn, "SELECT * FROM Users");
             
             if(!$result)
@@ -50,7 +50,7 @@
                 echo "Username: $row[0]  LastName: $row[1] FirstName: $row[2] birthday:$row[4] Userkey: $row[5]";
                 echo "<br />\n";
             }
-            */
+            
             
             
          }

@@ -5,12 +5,6 @@
 
 <script type="text/javascript">
 
-/***********************************************
- * Drop Down Date select script- by JavaScriptKit.com
- * This notice MUST stay intact for use
- * Visit JavaScript Kit at http://www.javascriptkit.com/ for this script and more
- ***********************************************/
-
 var monthtext=['Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sept','Oct','Nov','Dec'];
 
 function populatedropdown(dayfield, monthfield, yearfield){
@@ -153,7 +147,7 @@ function populatedropdown(dayfield, monthfield, yearfield){
             
     
         }
-        /*
+        
         $result= pg_query($dbconn, "SELECT * FROM Temp_Users");
         
         if(!$result)
@@ -169,7 +163,7 @@ function populatedropdown(dayfield, monthfield, yearfield){
             echo "<br />\n";
          
         }
-        */
+        
         
         
      }
@@ -177,7 +171,9 @@ function populatedropdown(dayfield, monthfield, yearfield){
     ?>
 
 
-<form id="sign_up_form" action="<?php echo $_SERVER['PHP_SELF'] ?>" onsubmit="return validate(event)" method="post">
+    
+
+<form id="sign_up_form" action="<?php echo $_SERVER['PHP_SELF'] ?>" onsubmit="return validate(event)" method="post" style="visibility: <?php if(isset($_POST['submit'])) echo "hidden"; else echo "none"; ?>">
 
 <input type="text" name="firstname" placeholder="First Name">
 <br>
@@ -207,7 +203,5 @@ window.onload=function()
 
 </form>
 
-
-
-    </body>
+</body>
 </html>
