@@ -158,7 +158,8 @@ function populatedropdown(dayfield, monthfield, yearfield){
         echo "You have signed up successfully! Please check your email for verification.";
         
         
-        while ($row = pg_fetch_row($result)) {
+        while ($row = pg_fetch_row($result))
+        {
             echo "Username: $row[0]  LastName: $row[1] FirstName: $row[2] birthday:$row[4] Userkey: $row[5]";
             echo "<br />\n";
          
