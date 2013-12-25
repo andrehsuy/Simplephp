@@ -40,10 +40,7 @@ function setOpacity(target, left, boundary)
 </head>
 
 <body>
-<?php
-    echo "You are logged in as $_SESSION['valid_user']";
-    
-?>
+
 <a href="logout.php"> logout </a>
 <div id="canvas" style="width:750; height:750; background-color:grey; display:block; position:absolute; left:50%; top:50%; margin-left:-375; margin-top:-375">
 
