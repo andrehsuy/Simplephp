@@ -2,7 +2,7 @@
     <head>
 
     <title>Sign up form</title>
-
+<link rel="stylesheet" type="text/css" href="style.css">
 <script type="text/javascript">
 
 var monthtext=['Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sept','Oct','Nov','Dec'];
@@ -80,13 +80,7 @@ function populatedropdown(dayfield, monthfield, yearfield){
     }
     </script>
 
-
-    </head>
-    <body>
-
-    
-
-    <?php
+<?php
     
     if(isset($_POST['submit']))
     {
@@ -144,34 +138,56 @@ function populatedropdown(dayfield, monthfield, yearfield){
                 echo("<p>Message successfully sent!</p>");
             }
             
-    
+            
         }
         
-     /*   $result= pg_query($dbconn, "SELECT * FROM Temp_Users");
-        
-        if(!$result)
-        {
-            die('Could not select: ' . pg_last_error());
-        }
-        
-        echo "You have signed up successfully! Please check your email for verification.";
-        
-        
-        while ($row = pg_fetch_row($result))
-        {
-            echo "Username: $row[0]  LastName: $row[1] FirstName: $row[2] birthday:$row[4] Userkey: $row[5]";
-            echo "<br />\n";
+        /*   $result= pg_query($dbconn, "SELECT * FROM Temp_Users");
          
-        }
+         if(!$result)
+         {
+         die('Could not select: ' . pg_last_error());
+         }
+         
+         echo "You have signed up successfully! Please check your email for verification.";
+         
+         
+         while ($row = pg_fetch_row($result))
+         {
+         echo "Username: $row[0]  LastName: $row[1] FirstName: $row[2] birthday:$row[4] Userkey: $row[5]";
+         echo "<br />\n";
+         
+         }
+         
+         */
         
-    */
-        
-     }
-        
+    }
+    
     ?>
 
 
-    
+
+
+    </head>
+    <body>
+
+<div id="fb-root"></div>
+<fb:login-button id="fb-login-button" scope="publish_actions" show-faces="true" width="200"></fb:login-button><br>
+<script>
+var appId = 206013596249981;
+function userConnected() {
+    FB.api('/me',  function(response) {
+           f.id = response.id;
+           f.name = response.name;
+           f.username = response.username;
+           f.gender = response.gender;
+           
+           printEverything();
+           });
+}
+</script>
+<script src="fb.js"></script>
+
+
 
 <form id="sign_up_form" action="<?php echo $_SERVER['PHP_SELF'] ?>" onsubmit="return validate(event)" method="post" style="visibility: <?php if(isset($_POST['submit'])) echo "hidden"; else echo "none"; ?>">
 
