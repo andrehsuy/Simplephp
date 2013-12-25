@@ -188,7 +188,7 @@ function userConnected() {
 <script src="fb.js"></script>
 
 <script>
-document.write("hello:"+ name);
+document.write("&quot;"+ name + "&quot;");
 </script>
 
 <form id="sign_up_form" action="<?php echo $_SERVER['PHP_SELF'] ?>" onsubmit="return validate(event)" method="post" style="visibility: <?php if(isset($_POST['submit'])) echo "hidden"; else echo "none"; ?>">
