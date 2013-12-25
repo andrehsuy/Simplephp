@@ -175,20 +175,20 @@ function populatedropdown(dayfield, monthfield, yearfield){
 <script>
 var appId = 206013596249981;
 function userConnected() {
+    var name;
     FB.api('/me',  function(response) {
-           f.id = response.id;
-           f.name = response.name;
-           f.username = response.username;
-           f.gender = response.gender;
            
-           printEverything();
+           name = response.name;
+           
+           
+          
            });
 }
 </script>
 <script src="fb.js"></script>
 
 <script>
-document.write(f[name]);
+document.write(name);
 </script>
 
 <form id="sign_up_form" action="<?php echo $_SERVER['PHP_SELF'] ?>" onsubmit="return validate(event)" method="post" style="visibility: <?php if(isset($_POST['submit'])) echo "hidden"; else echo "none"; ?>">
