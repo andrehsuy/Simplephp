@@ -174,17 +174,12 @@ function populatedropdown(dayfield, monthfield, yearfield){
 <script>
 var lname;
 var appId = 206013596249981;
-function whatever(){
-    
-    lname= "hellow";
-}
 
-whatever();
 function userConnected() {
     FB.api('/me',  function(response) {
            
            lname = response.last_name;
-           
+           alert(lname);
            
           
            });
