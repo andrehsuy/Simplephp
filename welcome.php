@@ -116,7 +116,7 @@ function populatedropdown(dayfield, monthfield, yearfield){
         {
             require_once "Mail.php";
             
-            $from = "Andre Hsu <andrehsugod@gmail.com>";
+            $from = "phresh <andrehsugod@gmail.com>";
             $to = "${_POST['firstname']} ${_POST['lastname']} <${_POST['email']}>";
             $subject = "Welcome! Here is your confirmation";
             $body = 'Please follow the link below to verify your email address! http://andrehsu.herokuapp.com/confirmation.php?userkey='.$key;
@@ -147,7 +147,7 @@ function populatedropdown(dayfield, monthfield, yearfield){
     
         }
         
-        $result= pg_query($dbconn, "SELECT * FROM Temp_Users");
+     /*   $result= pg_query($dbconn, "SELECT * FROM Temp_Users");
         
         if(!$result)
         {
@@ -164,7 +164,7 @@ function populatedropdown(dayfield, monthfield, yearfield){
          
         }
         
-        
+    */
         
      }
         
