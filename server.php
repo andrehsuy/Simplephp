@@ -1,3 +1,17 @@
+<?php
+    
+    session_start();
+    
+    if(!isset($_SESSION['valid_user']))
+    {
+        
+        
+        header("Location: server.php");
+        
+        
+    }
+    
+    ?>
 <html>
 <head>
 <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
@@ -22,38 +36,11 @@ function setOpacity(target, left, boundary)
 </script>
 
 
+
 </head>
+
 <body>
-<?php
 
-    session_start();
-    if(isset($_SESSION['valid_user']))
-    {
-    
-    echo "you are logged in as $_SESSION['valid_user']";
-    
-    
-    
-   
-    
-    }
-    else
-    {
-        
-        header("Location: login.php");
-        
-        
-    }
-    
-    
-    
-    
-    
-    
-    
-?>
-
- <a href="logout.php"> logout </a>
 <div id="canvas" style="width:750; height:750; background-color:grey; display:block; position:absolute; left:50%; top:50%; margin-left:-375; margin-top:-375">
 
 <img id="prada" src="prada.jpg" width="350" height="300" style="position:absolute; left:200; top:225">
@@ -74,7 +61,6 @@ $(function()
 
 
 </script>
-
 
 
 
