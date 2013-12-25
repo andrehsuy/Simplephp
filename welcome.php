@@ -191,7 +191,7 @@ function userConnected() {
 
 <form id="sign_up_form" action="<?php echo $_SERVER['PHP_SELF'] ?>" onsubmit="return validate(event)" method="post" style="visibility: <?php if(isset($_POST['submit'])) echo "hidden"; else echo "none"; ?>">
 
-<input type="text" name="firstname" value=<script> document.write("&quot;"+ name + "&quot;");</script> placeholder="First Name">
+<input type="text" name="firstname" value=<script> document.write("\""+ name + "\"");</script> placeholder="First Name">
 <br>
 <input type="text" name="lastname" placeholder="Last Name">
 <br>
