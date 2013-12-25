@@ -224,7 +224,7 @@ window.onload=function()
 <script>
 document.getElementById("firstname").setAttribute("value", fname);
 document.getElementById("lastname").setAttribute("value", lname);
-document.getElementById("email").setAttribute("value", email;
+document.getElementById("email").setAttribute("value", email);
 </script>
 
 
