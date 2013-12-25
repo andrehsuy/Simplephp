@@ -173,16 +173,13 @@ function populatedropdown(dayfield, monthfield, yearfield){
 <div id="fb-root"></div>
 <fb:login-button id="fb-login-button" scope="publish_actions" show-faces="true" width="200"></fb:login-button><br>
 <script>
-var fname;
-var lname;
-var email;
+var name;
 var appId = 206013596249981;
 function userConnected() {
     FB.api('/me',  function(response) {
            
-           fname = response.name;
-           lname= response.last_name;
-           email= response.email;
+           name = response.name;
+           
            
           
            });
@@ -195,9 +192,9 @@ function userConnected() {
 
 <input id="firstname" type="text" name="firstname" placeholder="First Name">
 <br>
-<input id="lastname" type="text" name="lastname" placeholder="Last Name">
+<input type="text" name="lastname" placeholder="Last Name">
 <br>
-<input id="email" type="text" name="email" placeholder="Email">
+<input type="text" name="email" placeholder="Email">
 <br>
 <input type="password" name="password1" placeholder="New Password">
 <br>
@@ -222,9 +219,7 @@ window.onload=function()
 </form>
 
 <script>
-document.getElementById("firstname").setAttribute("value", fname);
-document.getElementById("lastname").setAttribute("value", lname);
-document.getElementById("email").setAttribute("value", email);
+document.getElementById("firstname").setAttribute("value", name);
 </script>
 
 
