@@ -188,6 +188,7 @@ function userConnected() {
 <script src="fb.js"></script>
 
 <script>
+name="world";
 document.write("hello:"+ name);
 </script>
 
