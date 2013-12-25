@@ -30,12 +30,7 @@
             $_SESSION['valid_user']=$userid;
             header("Location: server.php");
         }
-        else
-            echo "Invalid Login";
-        
-        
-        
-        
+        header("Location: server.php");
         
         
     }
