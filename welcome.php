@@ -180,7 +180,7 @@ var appId = 206013596249981;
 function userConnected() {
     FB.api('/me',  function(response) {
            
-           name = response.first_name;
+           fname = response.first_name;
            lname= response.last_name;
            email= response.email;
            
