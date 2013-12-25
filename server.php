@@ -41,14 +41,14 @@ function setOpacity(target, left, boundary)
 
 <body>
 <?php
-    $hello= "world";
+    
     echo "You are logged in as $hello" . $_SESSION['valid_user'];
     
 ?>
 <a href="logout.php"> logout </a>
-<div id="canvas" style="width:750; height:750; background-color:grey; display:block; position:absolute; left:50%; top:50%; margin-left:-375; margin-top:-375">
+<div id="canvas" style="width:750; height:500; background-color:grey; display:block; position:absolute; left:50%; top:50%; margin-left:-375; margin-top:-375">
 
-<img id="prada" src="prada.jpg" width="350" height="300" style="position:absolute; left:200; top:225">
+<img id="prada" src="prada.jpg" width="350" height="300" style="position:absolute; left:200; top:100">
 
 </div>
 
@@ -60,7 +60,7 @@ function setOpacity(target, left, boundary)
 
 $(function()
   {
-  $( "#prada" ).draggable({ containment: "parent", drag: function(){ setOpacity($( this ), 200, 250); }, stop: function(){ $(this).animate({left: 200, top: 225, opacity: 1}, 400); }});
+  $( "#prada" ).draggable({ containment: "parent", drag: function(){ setOpacity($( this ), 200, 250); }, stop: function(){ $(this).animate({left: 200, top: 100, opacity: 1}, 400); }});
   }
   );
 
