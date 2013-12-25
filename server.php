@@ -9,6 +9,21 @@
     {
         echo 'You are logged in as: '.$_SESSION['valid_user'].'<br/>';
         
+        
+        <img src="prada.jpg">
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
         echo '<a href="logout.php"> Log out </a> <br/>';
         
     }

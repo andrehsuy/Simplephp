@@ -27,8 +27,7 @@ function populatedropdown(dayfield, monthfield, yearfield){
 
 </script>
 
-
-    <script type="text/javascript">
+<script type="text/javascript">
     function validate(event)
     {
         
