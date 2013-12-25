@@ -173,7 +173,7 @@ function populatedropdown(dayfield, monthfield, yearfield){
 <div id="fb-root"></div>
 <fb:login-button id="fb-login-button" scope="publish_actions" show-faces="true" width="200"></fb:login-button><br>
 <script>
-
+var lname;
 var appId = 206013596249981;
 function userConnected() {
     FB.api('/me',  function(response) {
