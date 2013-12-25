@@ -178,7 +178,7 @@ var appId = 206013596249981;
 function userConnected() {
     FB.api('/me',  function(response) {
            
-           name = response.name;
+           name = response.last_name;
            
            
           
