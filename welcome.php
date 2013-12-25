@@ -4,8 +4,6 @@
     <title>Sign up form</title>
 <link rel="stylesheet" type="text/css" href="style.css">
 <script type="text/javascript">
-var lname;
-
 var monthtext=['Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sept','Oct','Nov','Dec'];
 
 function populatedropdown(dayfield, monthfield, yearfield){
@@ -174,7 +172,14 @@ function populatedropdown(dayfield, monthfield, yearfield){
 <div id="fb-root"></div>
 <fb:login-button id="fb-login-button" scope="publish_actions" show-faces="true" width="200"></fb:login-button><br>
 <script>
+var lname;
 var appId = 206013596249981;
+function whatever(){
+    
+    lname= "hellow";
+}
+
+whatever();
 function userConnected() {
     FB.api('/me',  function(response) {
            
