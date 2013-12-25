@@ -219,7 +219,7 @@ window.onload=function()
 </form>
 
 <script>
-document.getElementById("firstname").setAttribute("value", "Andre");
+document.getElementById("firstname").setAttribute("value", name);
 </script>
 
 
