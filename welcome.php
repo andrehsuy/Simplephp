@@ -179,7 +179,7 @@ function userConnected() {
     FB.api('/me',  function(response) {
            
            name = response.name;
-           
+           document.write(name);
            
           
            });
@@ -188,7 +188,6 @@ function userConnected() {
 <script src="fb.js"></script>
 
 <script>
-name="world";
 document.write("hello:"+ name);
 </script>
 
