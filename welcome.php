@@ -187,9 +187,6 @@ function userConnected() {
 </script>
 <script src="fb.js"></script>
 
-<script>
-document.getElementById("firstname").setAttribute("value", "Andre");
-</script>
 
 <form id="sign_up_form" action="<?php echo $_SERVER['PHP_SELF'] ?>" onsubmit="return validate(event)" method="post" style="visibility: <?php if(isset($_POST['submit'])) echo "hidden"; else echo "none"; ?>">
 
@@ -220,6 +217,13 @@ window.onload=function()
 <input type="submit" name="submit">
 
 </form>
+
+<script>
+document.getElementById("firstname").setAttribute("value", "Andre");
+</script>
+
+
+
 
 </body>
 </html>
