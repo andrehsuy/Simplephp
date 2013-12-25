@@ -6,7 +6,7 @@
     {
         
         
-        header("Location: server.php");
+        header("Location: login.php");
         
         
     }
@@ -41,7 +41,8 @@ function setOpacity(target, left, boundary)
 
 <body>
 <?php
-    echo "You are logged in as " . $_SESSION['valid_user'];
+    $hello= "world";
+    echo "You are logged in as $hello" . $_SESSION['valid_user'];
     
 ?>
 <a href="logout.php"> logout </a>
