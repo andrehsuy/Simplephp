@@ -28,11 +28,15 @@
         if(pg_num_rows($result) != 0)
         {
             $_SESSION['valid_user']=$userid;
+            header("Location: server.php");
         }
+        else
+            echo "Invalid Login";
         
         
         
-        header("Location: server.php");
+        
+        
         
     }
     

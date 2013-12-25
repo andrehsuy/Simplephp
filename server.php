@@ -24,8 +24,9 @@ function setOpacity(target, left, boundary)
 
 </head>
 <body>
-
+Helloworld
 <?php
+    echo "successful login";
     session_start();
 
     if(isset($_SESSION['valid_user']))

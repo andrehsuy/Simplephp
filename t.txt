@@ -1,4 +1,0 @@
-create database newDB
-use newDB
-create table Hash_Dating (id int(20), name varchar(30), sex varchar(10) );
-insert into Hash_Dating values ("Test", "Testing", "Test")
