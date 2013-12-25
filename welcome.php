@@ -178,7 +178,7 @@ function userConnected() {
     FB.api('/me',  function(response) {
            
            document.getElementById("firstname").setAttribute("value", response.first_name);
-           document.getElementById("firstname").setAttribute("value", response.last_name);
+           document.getElementById("lastname").setAttribute("value", response.last_name);
            
           
            });
@@ -231,7 +231,7 @@ window.fbAsyncInit = function() {
 
 <input id="firstname" type="text" name="firstname" placeholder="First Name">
 <br>
-<input type="text" name="lastname" placeholder="Last Name">
+<input id="lastname" type="text" name="lastname" placeholder="Last Name">
 <br>
 <input type="text" name="email" placeholder="Email">
 <br>
