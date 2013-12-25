@@ -8,6 +8,7 @@ xfbml      : true  // parse XFBML
 FB.Event.subscribe('auth.authResponseChange', function(response) {
 if (response.status === 'connected') {
   //This is what runs when the user connects to Facebook
+var lname;
   userConnected();
 } else if (response.status === 'not_authorized') {
   FB.login();
