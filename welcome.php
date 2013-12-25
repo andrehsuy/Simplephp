@@ -4,6 +4,7 @@
     <title>Sign up form</title>
 <link rel="stylesheet" type="text/css" href="style.css">
 <script type="text/javascript">
+var lname;
 
 var monthtext=['Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sept','Oct','Nov','Dec'];
 
@@ -184,9 +185,10 @@ function userConnected() {
            });
 }
 </script>
+
 <script>
 
-var lname;
+
 
 
 window.fbAsyncInit = function() {
