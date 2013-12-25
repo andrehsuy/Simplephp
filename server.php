@@ -4,7 +4,7 @@
     
     session_start();
     
-    if(isset( $_SESSION['valid_user']))
+    if(isset($_SESSION['valid_user']))
     {
         echo "
         
@@ -34,7 +34,7 @@
         
         
         
-        <a href="logout.php"> logout </a>
+       
         
     }
     else
@@ -42,7 +42,7 @@
         
         header("Location: login.php");
     }
-    ?>
+?>
 
 
 
@@ -83,6 +83,6 @@ if(isset($_SESSION['valid_user']))
 }
 
 ?>
-
+ <a href="logout.php"> logout </a>
 </body>
 </html>
