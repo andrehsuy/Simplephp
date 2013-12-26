@@ -1,9 +1,7 @@
 <?php
-    $r = new HttpRequest('http://store.apple.com/us/buy-iphone/iphone5s', HttpRequest::METH_GET);
-
-    try {
-        echo $r->send()->getBody();
-    } catch (HttpException $ex) {
-        echo $ex;
-    }
-    ?>
+    
+require_once('phpcassa/lib/autoload.php');
+$pool = new ConnectionPool('Keyspace1', array('54.201.32.40'));
+    
+    
+?>
