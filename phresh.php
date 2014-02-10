@@ -14,8 +14,7 @@ var appId = 206013596249981;
 function userConnected() {
     
     FB.getLoginStatus(function(response) {
-                      if (response.status === 'connected')
-                      {
+                     
                         var uid = response.authResponse.userID;
                         var accessToken = response.authResponse.accessToken;
                         alert(accessToken);
