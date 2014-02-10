@@ -30,7 +30,7 @@ function userConnected()
                                         "expires":5000
                                     }
                               }
-                         console.log(obj);
+                      alert($.isPlainObject( obj ); // true
                       }
                    );
 }
