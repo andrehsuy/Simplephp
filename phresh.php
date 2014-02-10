@@ -30,7 +30,7 @@ function userConnected()
                                         "expires":5000
                                     }
                               }
-                        alert(obj);
+                         console.log(obj);
                       }
                    );
 }
