@@ -22,11 +22,12 @@ function userConnected() {
                          "account_medium":"facebook",
                           "credentials":
                          {
-                         "id":uid,
-                         "access_token":accessToken,
+                         "id":"123",
+                         "access_token":"123",
                          "expires":1000
                          }
                       };
+                      
                       alert(jQuery.isPlainObject( userData ));
 
                       }
