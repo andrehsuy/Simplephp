@@ -31,11 +31,11 @@ function userConnected() {
                       alert(jQuery.isPlainObject( userData ));
 
                       }
-                      );
-    
-    
-           });
+            );
 }
+
+    
+    
 </script>
 
 <script>
