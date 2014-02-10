@@ -20,10 +20,12 @@ function userConnected()
                         var uid = response.authResponse.userID;
                         var accessToken = response.authResponse.accessToken;
                       
+                      
                         alert( uid );
 
                        }
             );
+    alert("hi");
 }
 
     
