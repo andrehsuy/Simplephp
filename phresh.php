@@ -21,11 +21,18 @@ function userConnected()
                         var accessToken = response.authResponse.accessToken;
                       
                       
-                        alert( uid );
-
-                       }
-            );
-    alert("hi");
+                        var obj= {
+                                    "account_medium":"facebook",
+                                    "credentials":
+                                    {
+                                        "id":uid,
+                                        "access_token":accessToken,
+                                        "expires":5000
+                                    }
+                              }
+                        alert(obj);
+                      }
+                   );
 }
 
     
