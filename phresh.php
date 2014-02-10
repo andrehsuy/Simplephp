@@ -30,11 +30,8 @@ function userConnected() {
         }
     };
 
-    
-    $.post( "ec2-54-201-227-66.us-west-2.compute.amazonaws.com/phresh-server/user", userData, function( data ) {
-          alert( "Data Loaded: " + data );
-           });
-}
+    alert( $.isPlainObject( userData )); 
+   }
 </script>
 
 <script>
