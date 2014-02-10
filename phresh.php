@@ -20,7 +20,20 @@ function userConnected() {
                         alert(accessToken);
                       }
                       );
+    var userData= {
+        "account_medium":"facebook",
+        "credentials":
+        {
+            "id":uid,
+            "access_token":accessToken,
+            "expires":1000
+        }
+    };
+
     
+    $.post( "ec2-54-201-227-66.us-west-2.compute.amazonaws.com/phresh-server/user", userData, function( data ) {
+          alert( "Data Loaded: " + data );
+           });
 }
 </script>
 
