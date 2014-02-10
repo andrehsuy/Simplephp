@@ -24,13 +24,13 @@ function userConnected() {
         "account_medium":"facebook",
         "credentials":
         {
-            "id":uid,
-            "access_token":accessToken,
+            "id":"123",
+            "access_token":"122",
             "expires":1000
         }
     };
 
-    alert( $.isPlainObject( userData )); 
+    alert( $.isPlainObject( userData ));
    }
 </script>
 
