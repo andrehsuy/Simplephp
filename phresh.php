@@ -11,26 +11,18 @@
 <script>
 var appId = 206013596249981;
 
-function userConnected() {
+function userConnected()
+{
     
-    FB.getLoginStatus(function(response) {
+    FB.getLoginStatus( function(response)
+                       {
                      
                         var uid = response.authResponse.userID;
                         var accessToken = response.authResponse.accessToken;
                       
-                        var userData= {
-                         "account_medium":"facebook",
-                          "credentials":
-                         {
-                         "id":"123",
-                         "access_token":"123",
-                         "expires":1000
-                         }
-                      };
-                      
-                      alert(jQuery.isPlainObject( userData ));
+                        alert(jQuery.isPlainObject( uid ));
 
-                      }
+                       }
             );
 }
 
