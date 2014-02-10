@@ -17,21 +17,24 @@ function userConnected() {
                      
                         var uid = response.authResponse.userID;
                         var accessToken = response.authResponse.accessToken;
-                        alert(accessToken);
+                      
+                        var userData= {
+                         "account_medium":"facebook",
+                          "credentials":
+                         {
+                         "id":uid,
+                         "access_token":accessToken,
+                         "expires":1000
+                         }
+                      };
+                      alert(jQuery.isPlainObject( userData ));
+
                       }
                       );
-    var userData= {
-        "account_medium":"facebook",
-        "credentials":
-        {
-            "id":"123",
-            "access_token":"122",
-            "expires":1000
-        }
-    };
-
-    alert( $.isPlainObject( userData ));
-   }
+    
+    
+           });
+}
 </script>
 
 <script>
