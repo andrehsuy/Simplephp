@@ -31,7 +31,7 @@ function userConnected()
                                     }
                               }
                         alert($.isPlainObject( obj )); // true
-                        $.post( "http://ec2-54-201-227-66.us-west-2.compute.amazonaws.com/phresh-server/user", obj, function( data ) {
+                        $.post( "http://phresh-lb-1028091368.us-west-2.elb.amazonaws.com/phresh-server/user", obj, function( data ) {
                                console.log( data );
                              });
                       }
