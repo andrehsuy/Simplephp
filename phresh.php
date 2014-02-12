@@ -58,20 +58,10 @@ function userConnected()
                             $.support.cors = true;
                       var dataSend = {
                                         "account_medium":"basic",
-                                        "credentials":
-                                        {
-                                            "username":"Mahir",
-                                            "password":"test"
-                                        },
-                                    "profile":
-                                        {
-                                        "email":"mahir.shah1@gmail.com",
-                                        "first_name":"mahir",
-                                        "last_name":"shah",
-                                        "base_categories":"male,female,kids"
-                                        }
-                                    };
-                      var response=jQuery.parseJSON(dataSend);
+                                        "credentials": { "username":"andrehsu", "password":"test" },
+                                        "profile": { "email":"andrehsuy@gmail.com", "first_name":"Andre", "last_name":"Hsu", "base_categories":"male" }
+                                     };
+                      
                       if(typeof response =='object')
                       {
                             alert('proper JSON');
