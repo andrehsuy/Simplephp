@@ -55,7 +55,7 @@ function userConnected()
                             var uid = response.authResponse.userID;
                             var accessToken = response.authResponse.accessToken;
                             var token;
-                            $.support.cors = true;
+                           
                     
                       var dataSend= {
                       "account_medium":"basic",
