@@ -17,33 +17,35 @@ function userConnected()
     FB.getLoginStatus( function(response)
                        {
                      
-                        var uid = response.authResponse.userID;
-                        var accessToken = response.authResponse.accessToken;
-                        var token;
-                        $.support.cors = true;
-                        var obj= {
-                                    "account_medium":"facebook",
-                                    "credentials":
-                                    {
-                                        "id":uid,
-                                        "access_token":accessToken,
-                                        "expires":5000
-                                    }
-                              }
-                      
-                      $.ajax({
-                             type: "POST",
-                             beforeSend: function (xhr){
-                             xhr.setRequestHeader("Content-type","application/json");},
-                             url: "http://phresh-lb-1028091368.us-west-2.elb.amazonaws.com/phresh-server/user",
-                             dataType: "json",
-                             data: obj
-                             }).done(function(json){ //success
-                            token = json.auth_token;
-                            $('#tokenTest').text(token);
-                            })
+                            var uid = response.authResponse.userID;
+                            var accessToken = response.authResponse.accessToken;
+                            var token;
+                            $.support.cors = true;
+                            var obj= {
+                                        "account_medium":"facebook",
+                                        "credentials":
+                                            {
+                                            "id":uid,
+                                            "access_token":accessToken,
+                                            "expires":5000
+                                            }
+                                      }
+                            $.ajax({
+                             url: 'http://phresh-lb-1028091368.us-west-2.elb.amazonaws.com/phresh-server/user',
+                             type: 'POST',
+                             data: obj,
+                             headers: {
+                             "Content-Type":"application/json"
+                             },
+                             success: function(response, textStatus, jqXHR){
+                             console.log(response);
+                             },
+                             error: function(jqXHR, textStatus, errorThrown){
+                             console.log(errorThrown);	
+                             }
+                             });
                       }
-                   );
+                );
 }
 
     
