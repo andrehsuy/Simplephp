@@ -76,8 +76,7 @@ function userConnected()
                              type: 'POST',
                              data: dataSend,
                              headers: {
-                             "Content-Type":"application/json",
-                             "Origin":"andrehsu.herokuapp.com"
+                             "Content-Type":"application/json"
                              },
                              success: function(response, textStatus, jqXHR){
                              console.log(response);
