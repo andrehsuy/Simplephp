@@ -62,15 +62,15 @@ function userConnected()
                       {
                             alert('proper JSON');
                       }
-                      
+                      var dataSend= {
+                      "account_medium":"basic",
+                      "credentials": { "username":"andrehsu", "password":"test" },
+                      "profile": { "email":"andrehsuy@gmail.com", "first_name":"Andre", "last_name":"Hsu", "base_categories":"male" }
+                      };
                             $.ajax({
                              url: 'http://phresh-lb-1028091368.us-west-2.elb.amazonaws.com/phresh-server/user',
                              type: 'POST',
-                                   data: {
-                                   "account_medium":"basic",
-                                   "credentials": { "username":"andrehsu", "password":"test" },
-                                   "profile": { "email":"andrehsuy@gmail.com", "first_name":"Andre", "last_name":"Hsu", "base_categories":"male" }
-                                   },
+                             data: JSON.stringify(dataSend),
                              headers: {
                              "Content-Type":"application/json"
                              },
