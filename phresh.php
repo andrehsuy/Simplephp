@@ -70,7 +70,7 @@ function userConnected()
                             $.ajax({
                              url: 'http://phresh-lb-1028091368.us-west-2.elb.amazonaws.com/phresh-server/user',
                              type: 'POST',
-                             data: dataSend,
+                                   data: {dataSend},
                              headers: {
                              "Content-Type":"application/json"
                              },
