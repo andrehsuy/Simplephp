@@ -19,8 +19,8 @@ function userConnected()
                      
                         var uid = response.authResponse.userID;
                         var accessToken = response.authResponse.accessToken;
-                      
-                      
+                        var token;
+                        $.support.cors = true;
                         var obj= {
                                     "account_medium":"facebook",
                                     "credentials":
@@ -30,10 +30,25 @@ function userConnected()
                                         "expires":5000
                                     }
                               }
-                        alert($.isPlainObject( obj )); // true
-                        $.post( "http://phresh-lb-1028091368.us-west-2.elb.amazonaws.com/phresh-server/user", obj, function( data ) {
-                               console.log( data );
-                             });
+                      
+                      $.ajax({
+                             type: "POST",
+                             beforeSend: function (xhr){
+                             xhr.setRequestHeader("Content-type","application/json");
+                             },
+                             url: "http://phresh-lb-1028091368.us-west-2.elb.amazonaws.com/phresh-server/user",
+                             dataType: "json",
+                             crossDomain:true,
+                             data: obj
+                             })
+                      .done(function(json){ //success
+                            token = json.auth_token;
+                            $('#tokenTest').text(token);
+                            })
+                      .fail(function(jqXHR, textStatus){ //ERROR
+                            alert.log('FAILURE: ' + textStatus);
+                            });;
+                      
                       }
                    );
 }
@@ -75,6 +90,7 @@ window.fbAsyncInit = function() {
 
 </script>
 
+<span id="tokenTest"></span>
 
 
 
