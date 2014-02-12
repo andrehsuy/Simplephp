@@ -60,8 +60,8 @@ function userConnected()
                                         "account_medium":"facebook",
                                         "credentials":
                                             {
-                                            "id":uid,
-                                            "access_token":accessToken,
+                                            "id":"andrehsu",
+                                            "access_token":"testToken",
                                             "expires":5000
                                             }
                                       }
