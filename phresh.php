@@ -57,20 +57,26 @@ function userConnected()
                             var token;
                             $.support.cors = true;
                       var dataSend = {
-                      "account_medium":"basic",
-                      "credentials":
+                                        "account_medium":"basic",
+                                        "credentials":
+                                        {
+                                            "username":"Mahir",
+                                            "password":"test"
+                                        },
+                                    "profile":
+                                        {
+                                        "email":"mahir.shah1@gmail.com",
+                                        "first_name":"mahir",
+                                        "last_name":"shah",
+                                        "base_categories":"male,female,kids"
+                                        }
+                                    };
+                      var response=jQuery.parseJSON(dataSend);
+                      if(typeof response =='object')
                       {
-                      "username":"Mahir",
-                      "password":"test"
-                      },
-                      "profile":
-                      {
-                      "email":"mahir.shah1@gmail.com",
-                      "first_name":"mahir",
-                      "last_name":"shah",
-                      "base_categories":"male,female,kids" 
+                            alert('proper JSON');
                       }
-                      };
+                      
                             $.ajax({
                              url: 'http://phresh-lb-1028091368.us-west-2.elb.amazonaws.com/phresh-server/user',
                              type: 'POST',
