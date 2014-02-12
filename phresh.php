@@ -56,11 +56,7 @@ function userConnected()
                             var accessToken = response.authResponse.accessToken;
                             var token;
                             $.support.cors = true;
-                      var dataSend = '{
-                                        "account_medium":"basic",
-                                        "credentials": { "username":"andrehsu", "password":"test" },
-                                        "profile": { "email":"andrehsuy@gmail.com", "first_name":"Andre", "last_name":"Hsu", "base_categories":"male" }
-                                     }';
+                    
                       
                       if(typeof response =='object')
                       {
@@ -70,7 +66,11 @@ function userConnected()
                             $.ajax({
                              url: 'http://phresh-lb-1028091368.us-west-2.elb.amazonaws.com/phresh-server/user',
                              type: 'POST',
-                                   data: dataSend,
+                                   data: {
+                                   "account_medium":"basic",
+                                   "credentials": { "username":"andrehsu", "password":"test" },
+                                   "profile": { "email":"andrehsuy@gmail.com", "first_name":"Andre", "last_name":"Hsu", "base_categories":"male" }
+                                   },
                              headers: {
                              "Content-Type":"application/json"
                              },
