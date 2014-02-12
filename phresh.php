@@ -9,50 +9,6 @@
 <div id="fb-root"></div>
 <fb:login-button id="fb-login-button" scope="publish_actions" show-faces="true" width="200"></fb:login-button><br>
 <script>
-var appId = 206013596249981;
-
-function userConnected()
-{
-    
-    FB.getLoginStatus( function(response)
-                       {
-                            alert('hi');
-                            var uid = response.authResponse.userID;
-                            var accessToken = response.authResponse.accessToken;
-                            var token;
-                            $.support.cors = true;
-                            var obj= {
-                                        "account_medium":"facebook",
-                                        "credentials":
-                                            {
-                                            "id":uid,
-                                            "access_token":accessToken,
-                                            "expires":5000
-                                            }
-                                      }
-                            $.ajax({
-                             url: 'http://phresh-lb-1028091368.us-west-2.elb.amazonaws.com/phresh-server/user',
-                             type: 'POST',
-                             data: obj,
-                             headers: {
-                             "Content-Type":"application/json"
-                             },
-                             success: function(response, textStatus, jqXHR){
-                             console.log(response);
-                             },
-                             error: function(jqXHR, textStatus, errorThrown){
-                             console.log(errorThrown);	
-                             }
-                             });
-                      }
-                );
-}
-
-    
-    
-</script>
-
-<script>
 
 
 
@@ -84,6 +40,54 @@ window.fbAsyncInit = function() {
  }(document));
 
 </script>
+
+
+
+<script>
+var appId = 206013596249981;
+
+function userConnected()
+{
+    
+    FB.getLoginStatus( function(response)
+                       {
+                            alert('hi');
+                            var uid = response.authResponse.userID;
+                            var accessToken = response.authResponse.accessToken;
+                            var token;
+                            $.support.cors = true;
+                            var obj= {
+                                        "account_medium":"facebook",
+                                        "credentials":
+                                            {
+                                            "id":uid,
+                                            "access_token":accessToken,
+                                            "expires":5000
+                                            }
+                                      }
+                            $.ajax({
+                             url: 'http://phresh-lb-1028091368.us-west-2.elb.amazonaws.com/phresh-server/user',
+                             type: 'POST',
+                             data: obj,
+                             headers: {
+                             "Content-Type":"application/json"
+                             "origin":"phresh-lb-1028091368.us-west-2.elb.amazonaws.com"
+                             },
+                             success: function(response, textStatus, jqXHR){
+                             console.log(response);
+                             },
+                             error: function(jqXHR, textStatus, errorThrown){
+                             console.log(errorThrown);	
+                             }
+                             });
+                      }
+                );
+}
+
+    
+    
+</script>
+
 
 <span id="tokenTest"></span>
 
