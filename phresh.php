@@ -11,7 +11,7 @@
 <script>
 
 
-
+var appId = 206013596249981;
 
 window.fbAsyncInit = function() {
     FB.init({
@@ -42,8 +42,9 @@ window.fbAsyncInit = function() {
 </script>
 
 
+
 <script>
-var appId = 206013596249981;
+
 
 function userConnected()
 {
@@ -56,27 +57,26 @@ function userConnected()
                             var token;
                             $.support.cors = true;
                     
-                      var arr = {
-                                "account_medium":"basic",
-                                "credentials": { "username":"andrehsu", "password":"test" },
-                                "profile": { "email":"andrehsuy@gmail.com", "first_name":"Andre", "last_name":"Hsu", "base_categories":"male" }
-                                };
-
-                      $.ajax({
+                      var dataSend= {
+                      "account_medium":"basic",
+                      "credentials": { "username":"andrehsu", "password":"test" },
+                      "profile": { "email":"andrehsuy@gmail.com", "first_name":"Andre", "last_name":"Hsu", "base_categories":"male" }
+                      };
+                      
+                      
+                            $.ajax({
                              url: 'http://phresh-lb-1028091368.us-west-2.elb.amazonaws.com/phresh-server/user',
                              type: 'POST',
-                             data: JSON.stringify(arr),
+                             data: JSON.stringify(dataSend),
                              processData: false,
-                             contentType: 'application/json; charset=UTF-8',
-                             async: false,
-                             success: function(msg) {
-                             alert(msg);
+                             contentType: 'application/json; charset=utf-8',
+                             success: function(response, textStatus, jqXHR){
+                             console.log(response);
                              },
                              error: function(jqXHR, textStatus, errorThrown){
                              alert('something went wrong');
                              }
                              });
-                      
                       }
                 );
 }
