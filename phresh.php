@@ -42,7 +42,6 @@ window.fbAsyncInit = function() {
 </script>
 
 
-
 <script>
 var appId = 206013596249981;
 
@@ -67,7 +66,8 @@ function userConnected()
                              url: 'http://phresh-lb-1028091368.us-west-2.elb.amazonaws.com/phresh-server/user',
                              type: 'POST',
                              data: JSON.stringify(arr),
-                             contentType: 'application/json; charset=utf-8',
+                             processData: false,
+                             contentType: 'application/json; charset=UTF-8',
                              dataType: 'json',
                              async: false,
                              success: function(msg) {
