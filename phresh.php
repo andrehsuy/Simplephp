@@ -71,7 +71,7 @@ function userConnected()
                              data: obj,
                              headers: {
                              "Content-Type":"application/json",
-                             "origin":"phresh-lb-1028091368.us-west-2.elb.amazonaws.com"
+                             "Origin":"phresh-lb-1028091368.us-west-2.elb.amazonaws.com"
                              },
                              success: function(response, textStatus, jqXHR){
                              console.log(response);
