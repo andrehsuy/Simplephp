@@ -16,7 +16,7 @@ function userConnected()
     
     FB.getLoginStatus( function(response)
                        {
-                     
+                            alert('hi');
                             var uid = response.authResponse.userID;
                             var accessToken = response.authResponse.accessToken;
                             var token;
