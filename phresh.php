@@ -56,19 +56,25 @@ function userConnected()
                             var accessToken = response.authResponse.accessToken;
                             var token;
                             $.support.cors = true;
-                            var obj= {
-                                        "account_medium":"facebook",
-                                        "credentials":
-                                            {
-                                            "id":"andrehsu",
-                                            "access_token":"testToken",
-                                            "expires":5000
-                                            }
-                                };
+                      var dataSend = {
+                      "account_medium":"basic",
+                      "credentials":
+                      {
+                      "username":"Mahir",
+                      "password":"test"
+                      },
+                      "profile":
+                      {
+                      "email":"mahir.shah1@gmail.com",
+                      "first_name":"mahir",
+                      "last_name":"shah",
+                      "base_categories":"male,female,kids" 
+                      }
+                      };
                             $.ajax({
                              url: 'http://phresh-lb-1028091368.us-west-2.elb.amazonaws.com/phresh-server/user',
                              type: 'POST',
-                             data: obj,
+                             data: dataSend,
                              headers: {
                              "Content-Type":"application/json",
                              "Origin":"andrehsu.herokuapp.com"
