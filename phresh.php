@@ -64,7 +64,7 @@ function userConnected()
                                             "access_token":"testToken",
                                             "expires":5000
                                             }
-                                      }
+                                };
                             $.ajax({
                              url: 'http://phresh-lb-1028091368.us-west-2.elb.amazonaws.com/phresh-server/user',
                              type: 'POST',
