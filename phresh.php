@@ -68,7 +68,6 @@ function userConnected()
                              data: JSON.stringify(arr),
                              processData: false,
                              contentType: 'application/json; charset=UTF-8',
-                             dataType: 'json',
                              async: false,
                              success: function(msg) {
                              alert(msg);
