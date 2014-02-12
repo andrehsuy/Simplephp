@@ -71,13 +71,13 @@ function userConnected()
                              data: obj,
                              headers: {
                              "Content-Type":"application/json",
-                             "Origin":"phresh-lb-1028091368.us-west-2.elb.amazonaws.com"
+                             "Origin":"andrehsu.herokuapp.com"
                              },
                              success: function(response, textStatus, jqXHR){
                              console.log(response);
                              },
                              error: function(jqXHR, textStatus, errorThrown){
-                             console.log(errorThrown);	
+                             alert('something went wrong');
                              }
                              });
                       }
