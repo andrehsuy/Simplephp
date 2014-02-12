@@ -34,21 +34,15 @@ function userConnected()
                       $.ajax({
                              type: "POST",
                              beforeSend: function (xhr){
-                             xhr.setRequestHeader("Content-type","application/json");
-                             },
+                             xhr.setRequestHeader("Content-type","application/json");},
                              url: "http://phresh-lb-1028091368.us-west-2.elb.amazonaws.com/phresh-server/user",
                              dataType: "json",
                              crossDomain:true,
                              data: obj
-                             })
-                      .done(function(json){ //success
+                             }).done(function(json){ //success
                             token = json.auth_token;
                             $('#tokenTest').text(token);
                             })
-                      .fail(function(jqXHR, textStatus){ //ERROR
-                            alert.log('FAILURE: ' + textStatus);
-                            });;
-                      
                       }
                    );
 }
