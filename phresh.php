@@ -57,30 +57,27 @@ function userConnected()
                             var token;
                             $.support.cors = true;
                     
-                      
-                      if(typeof response =='object')
-                      {
-                            alert('proper JSON');
-                      }
-                      var dataSend= {
-                      "account_medium":"basic",
-                      "credentials": { "username":"andrehsu", "password":"test" },
-                      "profile": { "email":"andrehsuy@gmail.com", "first_name":"Andre", "last_name":"Hsu", "base_categories":"male" }
-                      };
-                            $.ajax({
+                      var arr = {
+                                "account_medium":"basic",
+                                "credentials": { "username":"andrehsu", "password":"test" },
+                                "profile": { "email":"andrehsuy@gmail.com", "first_name":"Andre", "last_name":"Hsu", "base_categories":"male" }
+                                };
+
+                      $.ajax({
                              url: 'http://phresh-lb-1028091368.us-west-2.elb.amazonaws.com/phresh-server/user',
                              type: 'POST',
-                             data: JSON.stringify(dataSend),
-                             headers: {
-                             "Content-Type":"application/json"
-                             },
-                             success: function(response, textStatus, jqXHR){
-                             console.log(response);
+                             data: JSON.stringify(arr),
+                             contentType: 'application/json; charset=utf-8',
+                             dataType: 'json',
+                             async: false,
+                             success: function(msg) {
+                             alert(msg);
                              },
                              error: function(jqXHR, textStatus, errorThrown){
                              alert('something went wrong');
                              }
                              });
+                      
                       }
                 );
 }
