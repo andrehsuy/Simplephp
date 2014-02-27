@@ -55,11 +55,11 @@ function userConnected()
                             var uid = response.authResponse.userID;
                             var accessToken = response.authResponse.accessToken;
                             var token;
-                           
+                      
                     
                       var dataSend= {
                       "account_medium":"basic",
-                      "credentials": { "username":"andrehsu", "password":"test" },
+                      "credentials": { "username":"andrehsuy", "password":"test1" },
                       "profile": { "email":"andrehsuy@gmail.com", "first_name":"Andre", "last_name":"Hsu", "base_categories":"male" }
                       };
                       
