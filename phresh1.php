@@ -20,7 +20,7 @@ function makeUserData(){
 
 function makeUser(){
     $.ajax({
-           url: "http://phresh-lb-1028091368.us-west-2.elb.amazonaws.com/phresh-server/user",
+           url: "phresh-lb-1028091368.us-west-2.elb.amazonaws.com/phresh-server/user",
            type: 'POST',
            data: JSON.stringify(makeUserData()),
            processData: false,
@@ -29,7 +29,7 @@ function makeUser(){
            "Content-Type":"application/json"
            },
            success: function(response, textStatus, jqXHR){
-           console.log(response)
+           console.log(response);
            },
            error: function(jqXHR, textStatus, errorThrown){
            alert("error");
@@ -41,11 +41,6 @@ function makeUser(){
 makeUser();
 
 </script>
-
-
-
-
-
 
 
 
