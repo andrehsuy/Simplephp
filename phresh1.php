@@ -99,7 +99,7 @@ function getItems(auth_token){
 }
 
 $(document).ready(function() {
-                  createUser("andrehsuy","justgoogleit", "andrehsuy@gmail.com", "male");
+                  createUser("andrehsuyy","justgoogleit", "andrehsugod@gmail.com", "male");
                   });
 
 
