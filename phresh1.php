@@ -99,7 +99,7 @@ function getItems(auth_token){
 }
 
 $(document).ready(function() {
-                  login("actest6", "test");
+                  getItems("lgs8y6mlt9hzcif5pslaqmsjg");
                   });
 
 
