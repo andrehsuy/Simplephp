@@ -99,7 +99,7 @@ function getItems(auth_token){
 }
 
 $(document).ready(function() {
-                  login("andrehsuyy","justgoogleit");
+                  getItems("hy99e1bx5y18xqw59wdzfzyao");
                   });
 
 
