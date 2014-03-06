@@ -80,7 +80,7 @@ function login(username, password){
 /*called on login complete to get 5 items*/
 function getItems(auth_token){
 	$.ajax({
-           url: 'http://phresh-lb-1028091368.us-west-2.elb.amazonaws.com/phresh-server/closet?limit=5&offset=10',
+           url: 'http://http://ec2-54-193-73-153.us-west-1.compute.amazonaws.com:8080/phresh-server_delete/closet?limit=5&offset=10',
            crossDomain:true,
            beforeSend: function(xhr){
            console.log('before send');
@@ -100,9 +100,34 @@ function getItems(auth_token){
 
 function addItems(auth_token, item_id){
 	$.ajax({
-           url: 'http://phresh-lb-1028091368.us-west-2.elb.amazonaws.com/phresh-server/closet',
+           url: 'http://http://ec2-54-193-73-153.us-west-1.compute.amazonaws.com:8080/phresh-server_delete/closet',
            type: 'POST',
            data: JSON.stringify({"item_id": item_id}),
+           contentType: 'application/json; charset=utf-8',
+           dataType: 'json',
+           processData: false,
+           crossDomain:true,
+           beforeSend: function(xhr){
+           console.log('before send');
+           xhr.setRequestHeader('Authorization', auth_token);
+           },
+           headers: {
+           "Authorization": auth_token
+           }
+           })
+	.done(function(json){
+          console.log(json);
+          })
+	.fail(function(jqXHR, textStatus){
+          console.log('Fail: ' + textStatus);
+          });
+}
+
+function deleteItems(auth_token, item_id){
+	$.ajax({
+           url: 'http://http://ec2-54-193-73-153.us-west-1.compute.amazonaws.com:8080/phresh-server_delete/closet',
+           type: 'POST',
+           data: JSON.stringify({"item_id": item_id, "delete": "true"}),
            contentType: 'application/json; charset=utf-8',
            dataType: 'json',
            processData: false,
