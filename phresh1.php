@@ -97,10 +97,15 @@ function getItems(auth_token){
           console.log('Fail: ' + textStatus);
           });
 }
-/*
-function deleteItems(auth_token, item_id){
+
+function addItems(auth_token, item_id){
 	$.ajax({
-           url: 'http://phresh-lb-1028091368.us-west-2.elb.amazonaws.com/phresh-server/items?limit=5&offset=10',
+           url: 'http://phresh-lb-1028091368.us-west-2.elb.amazonaws.com/phresh-server/closet',
+           type: 'POST',
+           data.JSON.stringify({"item_id": item_id}),
+           contentType: 'application/json; charset=utf-8',
+           dataType: 'json',
+           processData: false,
            crossDomain:true,
            beforeSend: function(xhr){
            console.log('before send');
@@ -117,8 +122,9 @@ function deleteItems(auth_token, item_id){
           console.log('Fail: ' + textStatus);
           });
 }
-*/
+
 $(document).ready(function() {
+                  addItems("lgs8y6mlt9hzcif5pslaqmsjg", "shop_style431307548Blush Suede/Gold Chrome8 B(M) US");
                   getItems("lgs8y6mlt9hzcif5pslaqmsjg");
                   });
 
