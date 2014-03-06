@@ -24,7 +24,7 @@ function createUser(username,password, email, gender){
 	};
     
 	$.ajax({
-           url: 'http://phresh-lb-1028091368.us-west-2.elb.amazonaws.com/phresh-server/user',
+           url: 'http://ec2-54-193-73-153.us-west-1.compute.amazonaws.com:8080/phresh-server/user',
            type: 'POST',
            
            data: JSON.stringify(dataSend),
@@ -58,7 +58,7 @@ function login(username, password){
 	};
 	
 	$.ajax({
-           url: 'http://phresh-lb-1028091368.us-west-2.elb.amazonaws.com/phresh-server/user/login',
+           url: 'http://ec2-54-193-73-153.us-west-1.compute.amazonaws.com:8080/phresh-server/user/login',
            type: 'POST',
            data: JSON.stringify(dataSend),
            processData: false,
@@ -80,7 +80,7 @@ function login(username, password){
 /*called on login complete to get 5 items*/
 function getItems(auth_token){
 	$.ajax({
-           url: 'http://http://ec2-54-193-73-153.us-west-1.compute.amazonaws.com:8080/phresh-server_delete/closet?limit=5&offset=10',
+           url: 'http://ec2-54-193-73-153.us-west-1.compute.amazonaws.com:8080/phresh-server_delete/closet?limit=5&offset=10',
            crossDomain:true,
            beforeSend: function(xhr){
            console.log('before send');
@@ -100,7 +100,7 @@ function getItems(auth_token){
 
 function addItems(auth_token, item_id){
 	$.ajax({
-           url: 'http://http://ec2-54-193-73-153.us-west-1.compute.amazonaws.com:8080/phresh-server_delete/closet',
+           url: 'http://ec2-54-193-73-153.us-west-1.compute.amazonaws.com:8080/phresh-server_delete/closet',
            type: 'POST',
            data: JSON.stringify({"item_id": item_id}),
            contentType: 'application/json; charset=utf-8',
@@ -125,7 +125,7 @@ function addItems(auth_token, item_id){
 
 function deleteItems(auth_token, item_id){
 	$.ajax({
-           url: 'http://http://ec2-54-193-73-153.us-west-1.compute.amazonaws.com:8080/phresh-server_delete/closet',
+           url: 'http://ec2-54-193-73-153.us-west-1.compute.amazonaws.com:8080/phresh-server_delete/closet',
            type: 'POST',
            data: JSON.stringify({"item_id": item_id, "delete": "true"}),
            contentType: 'application/json; charset=utf-8',
