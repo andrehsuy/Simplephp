@@ -170,10 +170,10 @@ function deleteItems(auth_token, item_id){
 }
 
 $(document).ready(function() {
-                  addItems("lgs8y6mlt9hzcif5pslaqmsjg", "shop_style405806507Blue7 M");
+                  //addItems("lgs8y6mlt9hzcif5pslaqmsjg", "shop_style405806507Blue7 M");
                   getItems("lgs8y6mlt9hzcif5pslaqmsjg");
-                 // deleteItems("lgs8y6mlt9hzcif5pslaqmsjg", "shop_style431307548Blush Suede/Gold Chrome8 B(M) US");
-                 // getItems("lgs8y6mlt9hzcif5pslaqmsjg");
+                  deleteItems("lgs8y6mlt9hzcif5pslaqmsjg", "shop_style431307548Blush Suede/Gold Chrome8 B(M) US");
+                  getItems("lgs8y6mlt9hzcif5pslaqmsjg");
                   });
 
 
