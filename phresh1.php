@@ -102,7 +102,7 @@ function addItems(auth_token, item_id){
 	$.ajax({
            url: 'http://phresh-lb-1028091368.us-west-2.elb.amazonaws.com/phresh-server/closet',
            type: 'POST',
-           data.JSON.stringify({"item_id": item_id}),
+           data: JSON.stringify({"item_id": item_id}),
            contentType: 'application/json; charset=utf-8',
            dataType: 'json',
            processData: false,
