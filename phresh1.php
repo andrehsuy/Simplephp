@@ -98,6 +98,27 @@ function getItems(auth_token){
           });
 }
 
+function getItemsR(auth_token){
+	$.ajax({
+           url: 'http://ec2-54-193-73-153.us-west-1.compute.amazonaws.com:8080/phresh-server_delete/items?limit=5&offset=10',
+           crossDomain:true,
+           beforeSend: function(xhr){
+           console.log('before send');
+           xhr.setRequestHeader('Authorization', auth_token);
+           },
+           headers: {
+           "Authorization": auth_token
+           }
+           })
+	.done(function(json){
+          console.log(json);
+          })
+	.fail(function(jqXHR, textStatus){
+          console.log('Fail: ' + textStatus);
+          });
+}
+
+
 function addItems(auth_token, item_id){
 	$.ajax({
            url: 'http://ec2-54-193-73-153.us-west-1.compute.amazonaws.com:8080/phresh-server_delete/closet',
@@ -149,10 +170,10 @@ function deleteItems(auth_token, item_id){
 }
 
 $(document).ready(function() {
-                 // addItems("lgs8y6mlt9hzcif5pslaqmsjg", "shop_style431307548Blush Suede/Gold Chrome8 B(M) US");
-                  getItems("lgs8y6mlt9hzcif5pslaqmsjg");
-                  deleteItems("lgs8y6mlt9hzcif5pslaqmsjg", "shop_style431307548Blush Suede/Gold Chrome8 B(M) US");
-                  getItems("lgs8y6mlt9hzcif5pslaqmsjg");
+                  //addItems("lgs8y6mlt9hzcif5pslaqmsjg", "shop_style431307548Blush Suede/Gold Chrome8 B(M) US");
+                  getItemsR("lgs8y6mlt9hzcif5pslaqmsjg");
+                 // deleteItems("lgs8y6mlt9hzcif5pslaqmsjg", "shop_style431307548Blush Suede/Gold Chrome8 B(M) US");
+                 // getItems("lgs8y6mlt9hzcif5pslaqmsjg");
                   });
 
 
