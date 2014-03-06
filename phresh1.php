@@ -123,7 +123,7 @@ function addItems(auth_token, item_id){
 	$.ajax({
            url: 'http://ec2-54-193-73-153.us-west-1.compute.amazonaws.com:8080/phresh-server_delete/closet',
            type: 'POST',
-           data: JSON.stringify({"item_id": item_id}),
+           data: JSON.stringify({"item_id": item_id, "delete": "false"}),
            contentType: 'application/json; charset=utf-8',
            dataType: 'json',
            processData: false,
@@ -141,7 +141,6 @@ function addItems(auth_token, item_id){
           })
 	.fail(function(jqXHR, textStatus){
           console.log('Fail: ' + textStatus);
-          console.log(json);
           });
 }
 
