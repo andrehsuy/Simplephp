@@ -121,7 +121,7 @@ function getItemsR(auth_token){
 
 function addItems(auth_token, item_id){
 	$.ajax({
-           url: 'http://ec2-54-193-73-153.us-west-1.compute.amazonaws.com:8080/phresh-server_delete/closet',
+           url: 'http://phresh-lb-1028091368.us-west-2.elb.amazonaws.com/phresh-server/closet',
            type: 'POST',
            data: JSON.stringify({"item_id": item_id}),
            contentType: 'application/json; charset=utf-8',
