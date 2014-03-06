@@ -121,7 +121,7 @@ function getItemsR(auth_token){
 
 function addItems(auth_token, item_id){
 	$.ajax({
-           url: 'http://ec2-54-193-73-153.us-west-1.compute.amazonaws.com:8080/phresh-server_f/closet',
+           url: 'http://ec2-54-193-73-153.us-west-1.compute.amazonaws.com:8080/phresh-server_delete/closet',
            type: 'POST',
            data: JSON.stringify({"item_id": item_id}),
            contentType: 'application/json; charset=utf-8',
@@ -171,7 +171,7 @@ function deleteItems(auth_token, item_id){
 }
 
 $(document).ready(function() {
-                   addItems("lgs8y6mlt9hzcif5pslaqmsjg", "shop_style405806507Blue7 M");
+                  addItems("lgs8y6mlt9hzcif5pslaqmsjg", "shop_style405806507Blue7 M");
                   getItems("lgs8y6mlt9hzcif5pslaqmsjg");
                  // deleteItems("lgs8y6mlt9hzcif5pslaqmsjg", "shop_style431307548Blush Suede/Gold Chrome8 B(M) US");
                  // getItems("lgs8y6mlt9hzcif5pslaqmsjg");
